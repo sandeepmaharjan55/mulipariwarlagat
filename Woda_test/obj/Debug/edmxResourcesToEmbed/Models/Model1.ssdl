@@ -1,117 +1,115 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="wodaModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="woda_testModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="table_address">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="Add_id" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Home_no" Type="int" Nullable="false" />
-    <Property Name="Oda_number" Type="int" Nullable="false" />
-    <Property Name="Sabik_gabisa" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Sabik_oda" Type="int" Nullable="false" />
-    <Property Name="Tole" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Add_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Oda_no" Type="int" Nullable="false" />
+    <Property Name="Sabik_gabisa" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Sabik_Oda" Type="int" Nullable="false" />
+    <Property Name="Tole" Type="int" Nullable="false" />
+    <Property Name="senior_id" Type="int" />
   </EntityType>
   <EntityType Name="table_demographic">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="D_id" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="D_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Total_person" Type="int" Nullable="false" />
     <Property Name="Male_count" Type="int" Nullable="false" />
     <Property Name="Female_count" Type="int" Nullable="false" />
-    <Property Name="caste" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="caste" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="religion" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Home_no" Type="int" Nullable="false" />
+    <Property Name="senior_id" Type="int" />
   </EntityType>
-  <EntityType Name="table_home_facilities">
+  <EntityType Name="table_home_facility">
     <Key>
-      <PropertyRef Name="Home_no" />
+      <PropertyRef Name="F_id" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Home_no" Type="int" Nullable="false" />
-    <Property Name="House_type" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="F_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="House_type" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="House_area" Type="int" Nullable="false" />
     <Property Name="House_total_area" Type="int" Nullable="false" />
-    <Property Name="roof_type" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="on_rent" Type="bool" Nullable="false" />
-    <Property Name="cooking_type" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="Entertainment" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="Annual_income" Type="int" Nullable="false" />
-    <Property Name="Drinking_water_type" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="Irrigation_type" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="road_type" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="ownership_type" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="roof_type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="on_rent" Type="bool" />
+    <Property Name="cooking_type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="entertainment" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="annual_income" Type="int" Nullable="false" />
+    <Property Name="drinking_water_TYPE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="irrigation_type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ownership_type" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="storey" Type="int" Nullable="false" />
-    <Property Name="electricity" Type="bool" Nullable="false" />
+    <Property Name="electricity" Type="bool" />
+    <Property Name="senior_id" Type="int" />
   </EntityType>
-  <EntityType Name="table_house_senior_detail">
+  <EntityType Name="table_house_senior_details">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="senior_id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="senior_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Home_no" Type="int" Nullable="false" />
-    <Property Name="Education" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Occupation" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Education" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Occupation" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Contact_no" Type="int" Nullable="false" />
     <Property Name="DOB" Type="date" Nullable="false" />
-    <Property Name="Birth_place" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Citizenship_no" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Citizenship_Issue_date" Type="date" Nullable="false" />
-    <Property Name="Citizenship_issue_district" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BirthPlace" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CitizenShip_no" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CitizenshipIssue_district" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <Association Name="Fk_address">
-    <End Role="table_home_facilities" Type="Self.table_home_facilities" Multiplicity="1" />
-    <End Role="table_address" Type="Self.table_address" Multiplicity="0..1" />
+  <Association Name="table_address_ibfk_1">
+    <End Role="table_house_senior_details" Type="Self.table_house_senior_details" Multiplicity="0..1" />
+    <End Role="table_address" Type="Self.table_address" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="table_home_facilities">
-        <PropertyRef Name="Home_no" />
+      <Principal Role="table_house_senior_details">
+        <PropertyRef Name="senior_id" />
       </Principal>
       <Dependent Role="table_address">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="senior_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Homeno">
-    <End Role="table_home_facilities" Type="Self.table_home_facilities" Multiplicity="1" />
-    <End Role="table_demographic" Type="Self.table_demographic" Multiplicity="0..1" />
+  <Association Name="table_demographic_ibfk_1">
+    <End Role="table_house_senior_details" Type="Self.table_house_senior_details" Multiplicity="0..1" />
+    <End Role="table_demographic" Type="Self.table_demographic" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="table_home_facilities">
-        <PropertyRef Name="Home_no" />
+      <Principal Role="table_house_senior_details">
+        <PropertyRef Name="senior_id" />
       </Principal>
       <Dependent Role="table_demographic">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="senior_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_senior">
-    <End Role="table_home_facilities" Type="Self.table_home_facilities" Multiplicity="1" />
-    <End Role="table_house_senior_detail" Type="Self.table_house_senior_detail" Multiplicity="0..1" />
+  <Association Name="table_home_facility_ibfk_1">
+    <End Role="table_house_senior_details" Type="Self.table_house_senior_details" Multiplicity="0..1" />
+    <End Role="table_home_facility" Type="Self.table_home_facility" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="table_home_facilities">
-        <PropertyRef Name="Home_no" />
+      <Principal Role="table_house_senior_details">
+        <PropertyRef Name="senior_id" />
       </Principal>
-      <Dependent Role="table_house_senior_detail">
-        <PropertyRef Name="id" />
+      <Dependent Role="table_home_facility">
+        <PropertyRef Name="senior_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="wodaModelStoreContainer">
-    <EntitySet Name="table_address" EntityType="Self.table_address" Schema="woda" store:Type="Tables" />
-    <EntitySet Name="table_demographic" EntityType="Self.table_demographic" Schema="woda" store:Type="Tables" />
-    <EntitySet Name="table_home_facilities" EntityType="Self.table_home_facilities" Schema="woda" store:Type="Tables" />
-    <EntitySet Name="table_house_senior_detail" EntityType="Self.table_house_senior_detail" Schema="woda" store:Type="Tables" />
-    <AssociationSet Name="Fk_address" Association="Self.Fk_address">
-      <End Role="table_home_facilities" EntitySet="table_home_facilities" />
+  <EntityContainer Name="woda_testModelStoreContainer">
+    <EntitySet Name="table_address" EntityType="Self.table_address" Schema="woda_test" store:Type="Tables" />
+    <EntitySet Name="table_demographic" EntityType="Self.table_demographic" Schema="woda_test" store:Type="Tables" />
+    <EntitySet Name="table_home_facility" EntityType="Self.table_home_facility" Schema="woda_test" store:Type="Tables" />
+    <EntitySet Name="table_house_senior_details" EntityType="Self.table_house_senior_details" Schema="woda_test" store:Type="Tables" />
+    <AssociationSet Name="table_address_ibfk_1" Association="Self.table_address_ibfk_1">
+      <End Role="table_house_senior_details" EntitySet="table_house_senior_details" />
       <End Role="table_address" EntitySet="table_address" />
     </AssociationSet>
-    <AssociationSet Name="FK_Homeno" Association="Self.FK_Homeno">
-      <End Role="table_home_facilities" EntitySet="table_home_facilities" />
+    <AssociationSet Name="table_demographic_ibfk_1" Association="Self.table_demographic_ibfk_1">
+      <End Role="table_house_senior_details" EntitySet="table_house_senior_details" />
       <End Role="table_demographic" EntitySet="table_demographic" />
     </AssociationSet>
-    <AssociationSet Name="FK_senior" Association="Self.FK_senior">
-      <End Role="table_home_facilities" EntitySet="table_home_facilities" />
-      <End Role="table_house_senior_detail" EntitySet="table_house_senior_detail" />
+    <AssociationSet Name="table_home_facility_ibfk_1" Association="Self.table_home_facility_ibfk_1">
+      <End Role="table_house_senior_details" EntitySet="table_house_senior_details" />
+      <End Role="table_home_facility" EntitySet="table_home_facility" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
