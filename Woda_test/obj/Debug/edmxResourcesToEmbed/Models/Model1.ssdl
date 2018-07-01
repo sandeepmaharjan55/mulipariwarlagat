@@ -8,7 +8,7 @@
     <Property Name="Oda_no" Type="int" Nullable="false" />
     <Property Name="Sabik_gabisa" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="Sabik_Oda" Type="int" Nullable="false" />
-    <Property Name="Tole" Type="int" Nullable="false" />
+    <Property Name="Tole" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="senior_id" Type="int" />
   </EntityType>
   <EntityType Name="table_demographic">

@@ -18,7 +18,7 @@ namespace Woda_test.Models
         public int Oda_no { get; set; }
         public string Sabik_gabisa { get; set; }
         public int Sabik_Oda { get; set; }
-        public int Tole { get; set; }
+        public string Tole { get; set; }
         public Nullable<int> senior_id { get; set; }
     
         public virtual table_house_senior_details table_house_senior_details { get; set; }

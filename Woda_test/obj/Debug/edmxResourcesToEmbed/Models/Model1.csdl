@@ -8,7 +8,7 @@
     <Property Name="Oda_no" Type="Int32" Nullable="false" />
     <Property Name="Sabik_gabisa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Sabik_Oda" Type="Int32" Nullable="false" />
-    <Property Name="Tole" Type="Int32" Nullable="false" />
+    <Property Name="Tole" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="senior_id" Type="Int32" />
     <NavigationProperty Name="table_house_senior_details" Relationship="Self.table_address_ibfk_1" FromRole="table_address" ToRole="table_house_senior_details" />
   </EntityType>
