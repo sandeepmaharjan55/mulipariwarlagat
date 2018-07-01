@@ -1,0 +1,66 @@
+﻿@model Woda_test.Models.table_demographic
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>table_demographic</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_person)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_person)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Male_count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Male_count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Female_count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Female_count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.caste)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.caste)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.religion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.religion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.table_house_senior_details.Education)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.table_house_senior_details.Education)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.D_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

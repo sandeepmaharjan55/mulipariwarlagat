@@ -12,22 +12,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Home_no)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Oda_number)
+            @Html.DisplayNameFor(model => model.Oda_no)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Sabik_gabisa)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Sabik_oda)
+            @Html.DisplayNameFor(model => model.Sabik_Oda)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Tole)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.table_home_facilities.House_type)
+            @Html.DisplayNameFor(model => model.table_house_senior_details.Education)
         </th>
         <th></th>
     </tr>
@@ -35,27 +32,24 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Home_no)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Oda_number)
+            @Html.DisplayFor(modelItem => item.Oda_no)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Sabik_gabisa)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Sabik_oda)
+            @Html.DisplayFor(modelItem => item.Sabik_Oda)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Tole)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.table_home_facilities.House_type)
+            @Html.DisplayFor(modelItem => item.table_house_senior_details.Education)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Add_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Add_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Add_id })
         </td>
     </tr>
 }

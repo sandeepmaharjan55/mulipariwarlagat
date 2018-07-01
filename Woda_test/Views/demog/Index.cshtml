@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Woda_test.Models.table_demographic>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Total_person)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Male_count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Female_count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.caste)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.religion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.table_house_senior_details.Education)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total_person)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Male_count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Female_count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.caste)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.religion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.table_house_senior_details.Education)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.D_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.D_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.D_id })
+        </td>
+    </tr>
+}
+
+</table>

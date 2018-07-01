@@ -1,4 +1,4 @@
-﻿@model Woda_test.Models.table_home_facilities
+﻿@model Woda_test.Models.table_home_facility
 
 @{
     ViewBag.Title = "Delete";
@@ -8,17 +8,9 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>table_home_facilities</h4>
+    <h4>table_home_facility</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.id)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.House_type)
         </dt>
@@ -68,43 +60,35 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Entertainment)
+            @Html.DisplayNameFor(model => model.entertainment)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Entertainment)
+            @Html.DisplayFor(model => model.entertainment)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Annual_income)
+            @Html.DisplayNameFor(model => model.annual_income)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Annual_income)
+            @Html.DisplayFor(model => model.annual_income)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Drinking_water_type)
+            @Html.DisplayNameFor(model => model.drinking_water_TYPE)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Drinking_water_type)
+            @Html.DisplayFor(model => model.drinking_water_TYPE)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Irrigation_type)
+            @Html.DisplayNameFor(model => model.irrigation_type)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Irrigation_type)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.road_type)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.road_type)
+            @Html.DisplayFor(model => model.irrigation_type)
         </dd>
 
         <dt>
@@ -132,27 +116,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.table_address.Sabik_gabisa)
+            @Html.DisplayNameFor(model => model.table_house_senior_details.Education)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.table_address.Sabik_gabisa)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.table_demographic.caste)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.table_demographic.caste)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.table_house_senior_detail.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.table_house_senior_detail.Name)
+            @Html.DisplayFor(model => model.table_house_senior_details.Education)
         </dd>
 
     </dl>

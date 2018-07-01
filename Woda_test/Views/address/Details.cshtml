@@ -11,19 +11,11 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Home_no)
+            @Html.DisplayNameFor(model => model.Oda_no)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Home_no)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Oda_number)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Oda_number)
+            @Html.DisplayFor(model => model.Oda_no)
         </dd>
 
         <dt>
@@ -35,11 +27,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Sabik_oda)
+            @Html.DisplayNameFor(model => model.Sabik_Oda)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Sabik_oda)
+            @Html.DisplayFor(model => model.Sabik_Oda)
         </dd>
 
         <dt>
@@ -51,16 +43,16 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.table_home_facilities.House_type)
+            @Html.DisplayNameFor(model => model.table_house_senior_details.Education)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.table_home_facilities.House_type)
+            @Html.DisplayFor(model => model.table_house_senior_details.Education)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Add_id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

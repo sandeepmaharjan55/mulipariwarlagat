@@ -1,0 +1,90 @@
+﻿@model Woda_test.Models.table_house_senior_details
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>table_house_senior_details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Home_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Home_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Education)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Education)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Occupation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Occupation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthPlace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthPlace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CitizenShip_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CitizenShip_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CitizenshipIssue_district)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CitizenshipIssue_district)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.senior_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

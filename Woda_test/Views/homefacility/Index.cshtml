@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Woda_test.Models.table_home_facilities>
+﻿@model IEnumerable<Woda_test.Models.table_home_facility>
 
 @{
     ViewBag.Title = "Index";
@@ -11,9 +11,6 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.id)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.House_type)
         </th>
@@ -33,19 +30,16 @@
             @Html.DisplayNameFor(model => model.cooking_type)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Entertainment)
+            @Html.DisplayNameFor(model => model.entertainment)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Annual_income)
+            @Html.DisplayNameFor(model => model.annual_income)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Drinking_water_type)
+            @Html.DisplayNameFor(model => model.drinking_water_TYPE)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Irrigation_type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.road_type)
+            @Html.DisplayNameFor(model => model.irrigation_type)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ownership_type)
@@ -57,22 +51,13 @@
             @Html.DisplayNameFor(model => model.electricity)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.table_address.Sabik_gabisa)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.table_demographic.caste)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.table_house_senior_detail.Name)
+            @Html.DisplayNameFor(model => model.table_house_senior_details.Education)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.id)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.House_type)
         </td>
@@ -92,19 +77,16 @@
             @Html.DisplayFor(modelItem => item.cooking_type)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Entertainment)
+            @Html.DisplayFor(modelItem => item.entertainment)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Annual_income)
+            @Html.DisplayFor(modelItem => item.annual_income)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Drinking_water_type)
+            @Html.DisplayFor(modelItem => item.drinking_water_TYPE)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Irrigation_type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.road_type)
+            @Html.DisplayFor(modelItem => item.irrigation_type)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ownership_type)
@@ -116,18 +98,12 @@
             @Html.DisplayFor(modelItem => item.electricity)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.table_address.Sabik_gabisa)
+            @Html.DisplayFor(modelItem => item.table_house_senior_details.Education)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.table_demographic.caste)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.table_house_senior_detail.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Home_no }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Home_no }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Home_no })
+            @Html.ActionLink("Edit", "Edit", new { id=item.F_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.F_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.F_id })
         </td>
     </tr>
 }

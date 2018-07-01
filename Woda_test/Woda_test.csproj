@@ -161,7 +161,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\addressController.cs" />
+    <Compile Include="Controllers\demogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\homefacilityController.cs" />
+    <Compile Include="Controllers\seniordetailsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -259,6 +263,16 @@
     <Content Include="Views\address\Details.cshtml" />
     <Content Include="Views\address\Edit.cshtml" />
     <Content Include="Views\address\Index.cshtml" />
+    <Content Include="Views\seniordetails\Create.cshtml" />
+    <Content Include="Views\seniordetails\Delete.cshtml" />
+    <Content Include="Views\seniordetails\Details.cshtml" />
+    <Content Include="Views\seniordetails\Edit.cshtml" />
+    <Content Include="Views\seniordetails\Index.cshtml" />
+    <Content Include="Views\demog\Create.cshtml" />
+    <Content Include="Views\demog\Delete.cshtml" />
+    <Content Include="Views\demog\Details.cshtml" />
+    <Content Include="Views\demog\Edit.cshtml" />
+    <Content Include="Views\demog\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
