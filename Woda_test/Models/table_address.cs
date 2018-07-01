@@ -14,13 +14,13 @@ namespace Woda_test.Models
     
     public partial class table_address
     {
-        public int id { get; set; }
-        public int Home_no { get; set; }
-        public int Oda_number { get; set; }
+        public int Add_id { get; set; }
+        public int Oda_no { get; set; }
         public string Sabik_gabisa { get; set; }
-        public int Sabik_oda { get; set; }
-        public string Tole { get; set; }
+        public int Sabik_Oda { get; set; }
+        public int Tole { get; set; }
+        public Nullable<int> senior_id { get; set; }
     
-        public virtual table_home_facilities table_home_facilities { get; set; }
+        public virtual table_house_senior_details table_house_senior_details { get; set; }
     }
 }

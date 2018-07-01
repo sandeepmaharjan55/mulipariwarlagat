@@ -161,9 +161,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\addressController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\homefacilityController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -188,10 +186,10 @@
     <Compile Include="Models\table_demographic.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\table_home_facilities.cs">
+    <Compile Include="Models\table_home_facility.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\table_house_senior_detail.cs">
+    <Compile Include="Models\table_house_senior_details.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

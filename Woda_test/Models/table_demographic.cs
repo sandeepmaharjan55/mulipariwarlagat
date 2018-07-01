@@ -14,14 +14,14 @@ namespace Woda_test.Models
     
     public partial class table_demographic
     {
-        public int id { get; set; }
+        public int D_id { get; set; }
         public int Total_person { get; set; }
         public int Male_count { get; set; }
         public int Female_count { get; set; }
         public string caste { get; set; }
         public string religion { get; set; }
-        public int Home_no { get; set; }
+        public Nullable<int> senior_id { get; set; }
     
-        public virtual table_home_facilities table_home_facilities { get; set; }
+        public virtual table_house_senior_details table_house_senior_details { get; set; }
     }
 }

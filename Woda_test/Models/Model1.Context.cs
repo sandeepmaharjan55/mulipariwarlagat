@@ -13,10 +13,10 @@ namespace Woda_test.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class wodaEntities : DbContext
+    public partial class woda_testEntities : DbContext
     {
-        public wodaEntities()
-            : base("name=wodaEntities")
+        public woda_testEntities()
+            : base("name=woda_testEntities")
         {
         }
     
@@ -27,7 +27,7 @@ namespace Woda_test.Models
     
         public virtual DbSet<table_address> table_address { get; set; }
         public virtual DbSet<table_demographic> table_demographic { get; set; }
-        public virtual DbSet<table_home_facilities> table_home_facilities { get; set; }
-        public virtual DbSet<table_house_senior_detail> table_house_senior_detail { get; set; }
+        public virtual DbSet<table_home_facility> table_home_facility { get; set; }
+        public virtual DbSet<table_house_senior_details> table_house_senior_details { get; set; }
     }
 }

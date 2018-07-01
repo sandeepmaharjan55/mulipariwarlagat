@@ -12,27 +12,24 @@ namespace Woda_test.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class table_home_facilities
+    public partial class table_home_facility
     {
-        public int id { get; set; }
-        public int Home_no { get; set; }
+        public int F_id { get; set; }
         public string House_type { get; set; }
         public int House_area { get; set; }
         public int House_total_area { get; set; }
         public string roof_type { get; set; }
-        public bool on_rent { get; set; }
+        public Nullable<bool> on_rent { get; set; }
         public string cooking_type { get; set; }
-        public string Entertainment { get; set; }
-        public int Annual_income { get; set; }
-        public string Drinking_water_type { get; set; }
-        public string Irrigation_type { get; set; }
-        public string road_type { get; set; }
+        public string entertainment { get; set; }
+        public int annual_income { get; set; }
+        public string drinking_water_TYPE { get; set; }
+        public string irrigation_type { get; set; }
         public string ownership_type { get; set; }
         public int storey { get; set; }
-        public bool electricity { get; set; }
+        public Nullable<bool> electricity { get; set; }
+        public Nullable<int> senior_id { get; set; }
     
-        public virtual table_address table_address { get; set; }
-        public virtual table_demographic table_demographic { get; set; }
-        public virtual table_house_senior_detail table_house_senior_detail { get; set; }
+        public virtual table_house_senior_details table_house_senior_details { get; set; }
     }
 }
