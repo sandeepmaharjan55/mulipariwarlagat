@@ -15,6 +15,7 @@ namespace Woda_test.Controllers
         private wodaEntities db = new wodaEntities();
 
         // GET: address
+
         public ActionResult Index()
         {
             var table_address = db.table_address.Include(t => t.table_home_facilities);
