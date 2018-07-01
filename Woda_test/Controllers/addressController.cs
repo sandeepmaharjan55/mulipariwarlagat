@@ -39,7 +39,7 @@ namespace Woda_test.Controllers
         // GET: address/Create
         public ActionResult Create()
         {
-            ViewBag.senior_id = new SelectList(db.table_house_senior_details, "senior_id", "Education");
+            ViewBag.senior_id = new SelectList(db.table_house_senior_details, "senior_id", "Home_no");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace Woda_test.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.senior_id = new SelectList(db.table_house_senior_details, "senior_id", "Education", table_address.senior_id);
+            ViewBag.senior_id = new SelectList(db.table_house_senior_details, "senior_id", "Home_no", table_address.senior_id);
             return View(table_address);
         }
 
@@ -73,7 +73,7 @@ namespace Woda_test.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.senior_id = new SelectList(db.table_house_senior_details, "senior_id", "Education", table_address.senior_id);
+            ViewBag.senior_id = new SelectList(db.table_house_senior_details, "senior_id", "Home_no", table_address.senior_id);
             return View(table_address);
         }
 
@@ -90,7 +90,7 @@ namespace Woda_test.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.senior_id = new SelectList(db.table_house_senior_details, "senior_id", "Education", table_address.senior_id);
+            ViewBag.senior_id = new SelectList(db.table_house_senior_details, "senior_id", "Home_no", table_address.senior_id);
             return View(table_address);
         }
 
