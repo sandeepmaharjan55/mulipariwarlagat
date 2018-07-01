@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Woda_test.Models.table_address>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Home_no)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oda_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sabik_gabisa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sabik_oda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.table_home_facilities.House_type)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Home_no)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oda_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sabik_gabisa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sabik_oda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tole)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.table_home_facilities.House_type)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

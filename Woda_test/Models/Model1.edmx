@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="wodaModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="table_address">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Home_no" Type="int" Nullable="false" />
+          <Property Name="Oda_number" Type="int" Nullable="false" />
+          <Property Name="Sabik_gabisa" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sabik_oda" Type="int" Nullable="false" />
+          <Property Name="Tole" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="table_demographic">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Total_person" Type="int" Nullable="false" />
+          <Property Name="Male_count" Type="int" Nullable="false" />
+          <Property Name="Female_count" Type="int" Nullable="false" />
+          <Property Name="caste" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="religion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Home_no" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="table_home_facilities">
+          <Key>
+            <PropertyRef Name="Home_no" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Home_no" Type="int" Nullable="false" />
+          <Property Name="House_type" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="House_area" Type="int" Nullable="false" />
+          <Property Name="House_total_area" Type="int" Nullable="false" />
+          <Property Name="roof_type" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="on_rent" Type="bool" Nullable="false" />
+          <Property Name="cooking_type" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Entertainment" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Annual_income" Type="int" Nullable="false" />
+          <Property Name="Drinking_water_type" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Irrigation_type" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="road_type" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ownership_type" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="storey" Type="int" Nullable="false" />
+          <Property Name="electricity" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="table_house_senior_detail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Home_no" Type="int" Nullable="false" />
+          <Property Name="Education" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Occupation" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contact_no" Type="int" Nullable="false" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+          <Property Name="Birth_place" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Citizenship_no" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Citizenship_Issue_date" Type="date" Nullable="false" />
+          <Property Name="Citizenship_issue_district" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="Fk_address">
+          <End Role="table_home_facilities" Type="Self.table_home_facilities" Multiplicity="1" />
+          <End Role="table_address" Type="Self.table_address" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="table_home_facilities">
+              <PropertyRef Name="Home_no" />
+            </Principal>
+            <Dependent Role="table_address">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Homeno">
+          <End Role="table_home_facilities" Type="Self.table_home_facilities" Multiplicity="1" />
+          <End Role="table_demographic" Type="Self.table_demographic" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="table_home_facilities">
+              <PropertyRef Name="Home_no" />
+            </Principal>
+            <Dependent Role="table_demographic">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_senior">
+          <End Role="table_home_facilities" Type="Self.table_home_facilities" Multiplicity="1" />
+          <End Role="table_house_senior_detail" Type="Self.table_house_senior_detail" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="table_home_facilities">
+              <PropertyRef Name="Home_no" />
+            </Principal>
+            <Dependent Role="table_house_senior_detail">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="wodaModelStoreContainer">
+          <EntitySet Name="table_address" EntityType="Self.table_address" Schema="woda" store:Type="Tables" />
+          <EntitySet Name="table_demographic" EntityType="Self.table_demographic" Schema="woda" store:Type="Tables" />
+          <EntitySet Name="table_home_facilities" EntityType="Self.table_home_facilities" Schema="woda" store:Type="Tables" />
+          <EntitySet Name="table_house_senior_detail" EntityType="Self.table_house_senior_detail" Schema="woda" store:Type="Tables" />
+          <AssociationSet Name="Fk_address" Association="Self.Fk_address">
+            <End Role="table_home_facilities" EntitySet="table_home_facilities" />
+            <End Role="table_address" EntitySet="table_address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Homeno" Association="Self.FK_Homeno">
+            <End Role="table_home_facilities" EntitySet="table_home_facilities" />
+            <End Role="table_demographic" EntitySet="table_demographic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_senior" Association="Self.FK_senior">
+            <End Role="table_home_facilities" EntitySet="table_home_facilities" />
+            <End Role="table_house_senior_detail" EntitySet="table_house_senior_detail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="wodaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="table_address">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Home_no" Type="Int32" Nullable="false" />
+          <Property Name="Oda_number" Type="Int32" Nullable="false" />
+          <Property Name="Sabik_gabisa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sabik_oda" Type="Int32" Nullable="false" />
+          <Property Name="Tole" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="table_home_facilities" Relationship="Self.Fk_address" FromRole="table_address" ToRole="table_home_facilities" />
+        </EntityType>
+        <EntityType Name="table_demographic">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Total_person" Type="Int32" Nullable="false" />
+          <Property Name="Male_count" Type="Int32" Nullable="false" />
+          <Property Name="Female_count" Type="Int32" Nullable="false" />
+          <Property Name="caste" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="religion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Home_no" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="table_home_facilities" Relationship="Self.FK_Homeno" FromRole="table_demographic" ToRole="table_home_facilities" />
+        </EntityType>
+        <EntityType Name="table_home_facilities">
+          <Key>
+            <PropertyRef Name="Home_no" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Home_no" Type="Int32" Nullable="false" />
+          <Property Name="House_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="House_area" Type="Int32" Nullable="false" />
+          <Property Name="House_total_area" Type="Int32" Nullable="false" />
+          <Property Name="roof_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="on_rent" Type="Boolean" Nullable="false" />
+          <Property Name="cooking_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Entertainment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Annual_income" Type="Int32" Nullable="false" />
+          <Property Name="Drinking_water_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Irrigation_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="road_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ownership_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="storey" Type="Int32" Nullable="false" />
+          <Property Name="electricity" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="table_address" Relationship="Self.Fk_address" FromRole="table_home_facilities" ToRole="table_address" />
+          <NavigationProperty Name="table_demographic" Relationship="Self.FK_Homeno" FromRole="table_home_facilities" ToRole="table_demographic" />
+          <NavigationProperty Name="table_house_senior_detail" Relationship="Self.FK_senior" FromRole="table_home_facilities" ToRole="table_house_senior_detail" />
+        </EntityType>
+        <EntityType Name="table_house_senior_detail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Home_no" Type="Int32" Nullable="false" />
+          <Property Name="Education" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Occupation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contact_no" Type="Int32" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" />
+          <Property Name="Birth_place" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Citizenship_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Citizenship_Issue_date" Type="DateTime" Nullable="false" />
+          <Property Name="Citizenship_issue_district" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="table_home_facilities" Relationship="Self.FK_senior" FromRole="table_house_senior_detail" ToRole="table_home_facilities" />
+        </EntityType>
+        <Association Name="Fk_address">
+          <End Role="table_home_facilities" Type="Self.table_home_facilities" Multiplicity="1" />
+          <End Role="table_address" Type="Self.table_address" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="table_home_facilities">
+              <PropertyRef Name="Home_no" />
+            </Principal>
+            <Dependent Role="table_address">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Homeno">
+          <End Role="table_home_facilities" Type="Self.table_home_facilities" Multiplicity="1" />
+          <End Role="table_demographic" Type="Self.table_demographic" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="table_home_facilities">
+              <PropertyRef Name="Home_no" />
+            </Principal>
+            <Dependent Role="table_demographic">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_senior">
+          <End Role="table_home_facilities" Type="Self.table_home_facilities" Multiplicity="1" />
+          <End Role="table_house_senior_detail" Type="Self.table_house_senior_detail" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="table_home_facilities">
+              <PropertyRef Name="Home_no" />
+            </Principal>
+            <Dependent Role="table_house_senior_detail">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="wodaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="table_address" EntityType="Self.table_address" />
+          <EntitySet Name="table_demographic" EntityType="Self.table_demographic" />
+          <EntitySet Name="table_home_facilities" EntityType="Self.table_home_facilities" />
+          <EntitySet Name="table_house_senior_detail" EntityType="Self.table_house_senior_detail" />
+          <AssociationSet Name="Fk_address" Association="Self.Fk_address">
+            <End Role="table_home_facilities" EntitySet="table_home_facilities" />
+            <End Role="table_address" EntitySet="table_address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Homeno" Association="Self.FK_Homeno">
+            <End Role="table_home_facilities" EntitySet="table_home_facilities" />
+            <End Role="table_demographic" EntitySet="table_demographic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_senior" Association="Self.FK_senior">
+            <End Role="table_home_facilities" EntitySet="table_home_facilities" />
+            <End Role="table_house_senior_detail" EntitySet="table_house_senior_detail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="wodaModelStoreContainer" CdmEntityContainer="wodaEntities">
+          <EntitySetMapping Name="table_address">
+            <EntityTypeMapping TypeName="wodaModel.table_address">
+              <MappingFragment StoreEntitySet="table_address">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Home_no" ColumnName="Home_no" />
+                <ScalarProperty Name="Oda_number" ColumnName="Oda_number" />
+                <ScalarProperty Name="Sabik_gabisa" ColumnName="Sabik_gabisa" />
+                <ScalarProperty Name="Sabik_oda" ColumnName="Sabik_oda" />
+                <ScalarProperty Name="Tole" ColumnName="Tole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="table_demographic">
+            <EntityTypeMapping TypeName="wodaModel.table_demographic">
+              <MappingFragment StoreEntitySet="table_demographic">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Total_person" ColumnName="Total_person" />
+                <ScalarProperty Name="Male_count" ColumnName="Male_count" />
+                <ScalarProperty Name="Female_count" ColumnName="Female_count" />
+                <ScalarProperty Name="caste" ColumnName="caste" />
+                <ScalarProperty Name="religion" ColumnName="religion" />
+                <ScalarProperty Name="Home_no" ColumnName="Home_no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="table_home_facilities">
+            <EntityTypeMapping TypeName="wodaModel.table_home_facilities">
+              <MappingFragment StoreEntitySet="table_home_facilities">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Home_no" ColumnName="Home_no" />
+                <ScalarProperty Name="House_type" ColumnName="House_type" />
+                <ScalarProperty Name="House_area" ColumnName="House_area" />
+                <ScalarProperty Name="House_total_area" ColumnName="House_total_area" />
+                <ScalarProperty Name="roof_type" ColumnName="roof_type" />
+                <ScalarProperty Name="on_rent" ColumnName="on_rent" />
+                <ScalarProperty Name="cooking_type" ColumnName="cooking_type" />
+                <ScalarProperty Name="Entertainment" ColumnName="Entertainment" />
+                <ScalarProperty Name="Annual_income" ColumnName="Annual_income" />
+                <ScalarProperty Name="Drinking_water_type" ColumnName="Drinking_water_type" />
+                <ScalarProperty Name="Irrigation_type" ColumnName="Irrigation_type" />
+                <ScalarProperty Name="road_type" ColumnName="road_type" />
+                <ScalarProperty Name="ownership_type" ColumnName="ownership_type" />
+                <ScalarProperty Name="storey" ColumnName="storey" />
+                <ScalarProperty Name="electricity" ColumnName="electricity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="table_house_senior_detail">
+            <EntityTypeMapping TypeName="wodaModel.table_house_senior_detail">
+              <MappingFragment StoreEntitySet="table_house_senior_detail">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Home_no" ColumnName="Home_no" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+                <ScalarProperty Name="Contact_no" ColumnName="Contact_no" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Birth_place" ColumnName="Birth_place" />
+                <ScalarProperty Name="Citizenship_no" ColumnName="Citizenship_no" />
+                <ScalarProperty Name="Citizenship_Issue_date" ColumnName="Citizenship_Issue_date" />
+                <ScalarProperty Name="Citizenship_issue_district" ColumnName="Citizenship_issue_district" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

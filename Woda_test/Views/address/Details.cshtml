@@ -1,0 +1,66 @@
+﻿@model Woda_test.Models.table_address
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>table_address</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Home_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Home_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oda_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oda_number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sabik_gabisa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sabik_gabisa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sabik_oda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sabik_oda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tole)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tole)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.table_home_facilities.House_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.table_home_facilities.House_type)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

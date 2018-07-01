@@ -1,0 +1,162 @@
+﻿@model Woda_test.Models.table_home_facilities
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>table_home_facilities</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.House_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.House_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.House_area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.House_area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.House_total_area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.House_total_area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.roof_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.roof_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.on_rent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.on_rent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cooking_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cooking_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Entertainment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Entertainment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Annual_income)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Annual_income)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Drinking_water_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Drinking_water_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Irrigation_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Irrigation_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.road_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.road_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ownership_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ownership_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.storey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.storey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.electricity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.electricity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.table_address.Sabik_gabisa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.table_address.Sabik_gabisa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.table_demographic.caste)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.table_demographic.caste)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.table_house_senior_detail.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.table_house_senior_detail.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Home_no }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

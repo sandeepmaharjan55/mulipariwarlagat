@@ -1,0 +1,135 @@
+﻿@model IEnumerable<Woda_test.Models.table_home_facilities>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.House_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.House_area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.House_total_area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.roof_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.on_rent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cooking_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Entertainment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Annual_income)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Drinking_water_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Irrigation_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.road_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ownership_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.storey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.electricity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.table_address.Sabik_gabisa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.table_demographic.caste)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.table_house_senior_detail.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.House_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.House_area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.House_total_area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.roof_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.on_rent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cooking_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Entertainment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Annual_income)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Drinking_water_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Irrigation_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.road_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ownership_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.storey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.electricity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.table_address.Sabik_gabisa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.table_demographic.caste)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.table_house_senior_detail.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Home_no }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Home_no }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Home_no })
+        </td>
+    </tr>
+}
+
+</table>

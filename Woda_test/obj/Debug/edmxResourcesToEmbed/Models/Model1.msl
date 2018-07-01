@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="wodaModelStoreContainer" CdmEntityContainer="wodaEntities">
+    <EntitySetMapping Name="table_address">
+      <EntityTypeMapping TypeName="wodaModel.table_address">
+        <MappingFragment StoreEntitySet="table_address">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Home_no" ColumnName="Home_no" />
+          <ScalarProperty Name="Oda_number" ColumnName="Oda_number" />
+          <ScalarProperty Name="Sabik_gabisa" ColumnName="Sabik_gabisa" />
+          <ScalarProperty Name="Sabik_oda" ColumnName="Sabik_oda" />
+          <ScalarProperty Name="Tole" ColumnName="Tole" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_demographic">
+      <EntityTypeMapping TypeName="wodaModel.table_demographic">
+        <MappingFragment StoreEntitySet="table_demographic">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Total_person" ColumnName="Total_person" />
+          <ScalarProperty Name="Male_count" ColumnName="Male_count" />
+          <ScalarProperty Name="Female_count" ColumnName="Female_count" />
+          <ScalarProperty Name="caste" ColumnName="caste" />
+          <ScalarProperty Name="religion" ColumnName="religion" />
+          <ScalarProperty Name="Home_no" ColumnName="Home_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_home_facilities">
+      <EntityTypeMapping TypeName="wodaModel.table_home_facilities">
+        <MappingFragment StoreEntitySet="table_home_facilities">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Home_no" ColumnName="Home_no" />
+          <ScalarProperty Name="House_type" ColumnName="House_type" />
+          <ScalarProperty Name="House_area" ColumnName="House_area" />
+          <ScalarProperty Name="House_total_area" ColumnName="House_total_area" />
+          <ScalarProperty Name="roof_type" ColumnName="roof_type" />
+          <ScalarProperty Name="on_rent" ColumnName="on_rent" />
+          <ScalarProperty Name="cooking_type" ColumnName="cooking_type" />
+          <ScalarProperty Name="Entertainment" ColumnName="Entertainment" />
+          <ScalarProperty Name="Annual_income" ColumnName="Annual_income" />
+          <ScalarProperty Name="Drinking_water_type" ColumnName="Drinking_water_type" />
+          <ScalarProperty Name="Irrigation_type" ColumnName="Irrigation_type" />
+          <ScalarProperty Name="road_type" ColumnName="road_type" />
+          <ScalarProperty Name="ownership_type" ColumnName="ownership_type" />
+          <ScalarProperty Name="storey" ColumnName="storey" />
+          <ScalarProperty Name="electricity" ColumnName="electricity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_house_senior_detail">
+      <EntityTypeMapping TypeName="wodaModel.table_house_senior_detail">
+        <MappingFragment StoreEntitySet="table_house_senior_detail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Home_no" ColumnName="Home_no" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="Contact_no" ColumnName="Contact_no" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Birth_place" ColumnName="Birth_place" />
+          <ScalarProperty Name="Citizenship_no" ColumnName="Citizenship_no" />
+          <ScalarProperty Name="Citizenship_Issue_date" ColumnName="Citizenship_Issue_date" />
+          <ScalarProperty Name="Citizenship_issue_district" ColumnName="Citizenship_issue_district" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
