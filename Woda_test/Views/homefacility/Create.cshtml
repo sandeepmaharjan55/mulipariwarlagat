@@ -2,6 +2,76 @@
 
 @{
     ViewBag.Title = "Create";
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    listItems.Add(new SelectListItem
+    {
+        Text = "इट्टा ",
+        Value = "इट्टा "
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "बाँस/लाठि ",
+        Value = "बाँस/लाठि ",
+        Selected = true
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "ढुंगा/ माटो ",
+        Value = "ढुंगा/ माटो "
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "फुस/ बॉस",
+        Value = "फुस/ बॉस "
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "फ्याब्रीक",
+        Value = "फ्याब्रीक "
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "अन्य ....",
+        Value = "अन्य ...."
+    });
+
+
+
+
+    List<SelectListItem> roofItems = new List<SelectListItem>();
+    roofItems.Add(new SelectListItem
+    {
+        Text = "ढलान  ",
+        Value = "ढलान  "
+    });
+    roofItems.Add(new SelectListItem
+    {
+        Text = "जस्ता पाता  ",
+        Value = "जस्ता पाता ",
+        Selected = true
+    });
+    roofItems.Add(new SelectListItem
+    {
+        Text = "पराल /खर ",
+        Value = "पराल /खर  "
+    });
+    roofItems.Add(new SelectListItem
+    {
+        Text = "टायल",
+        Value = "टायल "
+    });
+    roofItems.Add(new SelectListItem
+    {
+        Text = "प्लास्टिक",
+        Value = "प्लास्टिक "
+    });
+    roofItems.Add(new SelectListItem
+    {
+        Text = "अन्य ....",
+        Value = "अन्य ...."
+    });
+
+
 }
 
 <h2>Create</h2>
@@ -18,8 +88,12 @@
         <div class="form-group">
             @Html.LabelFor(model => model.House_type, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.House_type, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.House_type, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.House_type, listItems, "-- Select Housetype --", new { @class = "form-control" })
+
+
+               @* @Html.EditorFor(model => model.House_type, new { htmlAttributes = new { @class = "form-control" } })
+            *@
+                   @Html.ValidationMessageFor(model => model.House_type, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -42,8 +116,12 @@
         <div class="form-group">
             @Html.LabelFor(model => model.roof_type, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.roof_type, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.roof_type, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.roof_type, roofItems, "-- Select Rooftype --", new { @class = "form-control" })
+
+@*
+    @Html.EditorFor(model => model.roof_type, new { htmlAttributes = new { @class = "form-control" } })
+*@
+                  @Html.ValidationMessageFor(model => model.roof_type, "", new { @class = "text-danger" })
             </div>
         </div>
 
