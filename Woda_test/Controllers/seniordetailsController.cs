@@ -15,9 +15,26 @@ namespace Woda_test.Controllers
         private woda_testEntities db = new woda_testEntities();
 
         // GET: seniordetails
-        public ActionResult Index()
+        public ActionResult Index(string q, string order)
         {
-            return View(db.table_house_senior_details.ToList());
+            var name = from n in db.table_house_senior_details select n;
+            if (q != null)
+            {
+                name = name.Where(n => n.Name.Contains(q));
+            }
+            switch (order)
+            {
+                case "name":
+                    name = name.OrderBy(n => n.Name);
+                    break;
+                case "home":
+                    name = name.OrderBy(n => n.Home_no);
+                    break;
+                default:
+                    name = name.OrderBy(n => n.senior_id);
+                    break;
+            }
+            return View(name.ToList());
         }
 
         // GET: seniordetails/Details/5

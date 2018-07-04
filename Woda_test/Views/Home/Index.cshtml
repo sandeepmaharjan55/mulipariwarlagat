@@ -1,31 +1,136 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model IEnumerable<Woda_test.Models.table_house_senior_details>
+
+@{
+    ViewBag.Title = "Index";
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    listItems.Add(new SelectListItem
+    {
+        Text = "SEE Pass",
+        Value = "1"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "+2 Pass",
+        Value = "2",
+        Selected = true
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Bachelor Pass",
+        Value = "3"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Master Pass",
+        Value = "4"
+    });
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<h2>Index</h2>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="pull-right">
+    @using (Html.BeginForm("Index", "seniordetails", FormMethod.Get))
+    {
+        @Html.TextBox("q", "", new { placeholder = "Search..." });
+
+        <button type="submit" class="btn btn-primary">GO</button>
+
+    }
 </div>
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            <a href="~/seniordetails?order=home">
+                HomeNum
+            </a>
+
+        </th>
+        
+        <th>
+            <a href="~/seniordetails?order=name">
+                Name
+            </a>
+        </th>
+        <th>
+            Oda_Number
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Education)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Occupation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact_no)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthPlace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CitizenShip_no)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CitizenshipIssue_district)
+        </th>
+       
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+            foreach (var subitem in item.table_address)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Home_no)
+                    </td>
+                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_address => subitem.Oda_no)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Education)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Occupation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contact_no)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DOB)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BirthPlace)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CitizenShip_no)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CitizenshipIssue_district)
+                    </td>
+                   
+                        
+
+
+
+                </tr>
+        }
+    }
+    
+
+
+    </table>

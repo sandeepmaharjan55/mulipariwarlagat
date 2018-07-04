@@ -9,9 +9,10 @@
 
 namespace Woda_test.Models
 {
+    using Models;
     using System;
     using System.Collections.Generic;
-    
+
     public partial class table_house_senior_details
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

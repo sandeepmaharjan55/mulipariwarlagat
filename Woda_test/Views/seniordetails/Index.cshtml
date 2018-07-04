@@ -31,14 +31,30 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<div class="pull-right">
+    @using (Html.BeginForm("Index", "seniordetails", FormMethod.Get))
+    {
+        @Html.TextBox("q", "", new { placeholder = "Search..." });
+
+        <button type="submit" class="btn btn-primary">GO</button>
+
+    }
+</div>
+<br />
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Home_no)
+            <a href="~/seniordetails?order=home">
+                HomeNum
+            </a>
+           
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
+            <a href="~/seniordetails?order=name">
+                Name
+                </a>
+</th>
         <th>
             @Html.DisplayNameFor(model => model.Education)
         </th>
@@ -94,12 +110,12 @@
             @Html.DisplayFor(modelItem => item.CitizenshipIssue_district)
         </td>
        
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.senior_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.senior_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.senior_id })
-        </td>
+      
+        
+     
     </tr>
 }
+  
+    
 
 </table>
