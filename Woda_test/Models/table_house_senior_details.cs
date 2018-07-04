@@ -24,6 +24,7 @@ namespace Woda_test.Models
         }
     
         public int senior_id { get; set; }
+       
         public int Home_no { get; set; }
         public string Education { get; set; }
         public string Occupation { get; set; }
