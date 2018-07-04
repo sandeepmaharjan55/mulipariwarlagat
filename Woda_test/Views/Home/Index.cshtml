@@ -60,6 +60,15 @@
             Oda_Number
         </th>
         <th>
+            Sabik_gabisa
+        </th>
+        <th>
+            Sabik_Oda
+        </th>
+        <th>
+            Tole
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Education)
         </th>
         <th>
@@ -80,16 +89,74 @@
         <th>
             @Html.DisplayNameFor(model => model.CitizenshipIssue_district)
         </th>
-       
+        <th>
+            Caste
+        </th>
+        <th>
+            Religion
+        </th>
+        <th>
+            MaleCount
+        </th>
+        <th>
+            FemaleCount
+        </th>
+        <th>
+            TotalPerson
+        </th>
 
+
+        <th>
+            AnnualIncome
+        </th>
+        <th>
+            CookingType
+        </th>
+        <th>
+            DrinkingWaterType
+        </th>
+        <th>
+            Electricity
+        </th>
+        <th>
+            Entertainment
+        </th>
+        <th>
+            HouseArea
+        </th>
+        <th>
+            HouseTotalArea
+        </th>
+        <th>
+            HouseType
+        </th>
+        <th>
+            IrrigationType
+        </th>
+        <th>
+            OnRent
+        </th>
+        <th>
+            OwnerShipType
+        </th>
+        <th>
+            RoofType
+        </th>
+        <th>
+            Storey
+        </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
 
-            foreach (var subitem in item.table_address)
+        foreach (var subitem in item.table_address)
+        {
+            foreach (var demo in item.table_demographic)
             {
+                foreach (var homfac in item.table_home_facility)
+                {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.Home_no)
@@ -100,6 +167,15 @@
                     </td>
                     <td>
                         @Html.DisplayFor(table_address => subitem.Oda_no)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_address => subitem.Sabik_gabisa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_address => subitem.Sabik_Oda)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_address => subitem.Tole)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Education)
@@ -122,15 +198,71 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.CitizenshipIssue_district)
                     </td>
-                   
-                        
+                    <td>
+                        @Html.DisplayFor(table_demographic => demo.caste)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_demographic => demo.religion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_demographic => demo.Male_count)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_demographic => demo.Female_count)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_demographic => demo.Total_person)
+                    </td>
 
+
+
+                    <td>
+                        @Html.DisplayFor(table_home_facility => homfac.annual_income)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_home_facility => homfac.cooking_type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_home_facility => homfac.drinking_water_TYPE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_home_facility => homfac.electricity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_home_facility => homfac.entertainment)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_home_facility => homfac.House_area)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_home_facility => homfac.House_total_area)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_home_facility => homfac.House_type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_home_facility => homfac.irrigation_type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_home_facility => homfac.on_rent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_home_facility => homfac.ownership_type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_home_facility => homfac.roof_type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(table_home_facility => homfac.storey)
+                    </td>
 
 
                 </tr>
+                }
+            }
         }
     }
-    
+
 
 
     </table>
