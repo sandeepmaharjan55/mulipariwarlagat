@@ -67,10 +67,19 @@ namespace Woda_test.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.table_house_senior_details.Add(table_house_senior_details);
+
+                if (!db.table_house_senior_details.Any(u => u.senior_id == table_house_senior_details.senior_id))
+                {
+                    db.table_house_senior_details.Add(table_house_senior_details);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            else
+            {
+                ViewBag.error = "This Home Number already added";
+
+            }
+        }
 
             return View(table_house_senior_details);
         }

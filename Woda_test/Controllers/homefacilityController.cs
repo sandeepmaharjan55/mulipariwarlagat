@@ -66,9 +66,17 @@ namespace Woda_test.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.table_home_facility.Add(table_home_facility);
+                if (!db.table_home_facility.Any(u => u.senior_id == table_home_facility.senior_id))
+                {
+                    db.table_home_facility.Add(table_home_facility);
                 db.SaveChanges();
                 return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.error = "This Home Number already added";
+
+                }
             }
 
             ViewBag.senior_id = new SelectList(db.table_house_senior_details, "senior_id", "Home_no", table_home_facility.senior_id);
