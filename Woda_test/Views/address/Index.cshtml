@@ -9,19 +9,35 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<div class="pull-right">
+    @using (Html.BeginForm("Index", "address", FormMethod.Get))
+    {
+        @Html.TextBox("q", "", new { placeholder = "Search..." });
+
+        <button type="submit" class="btn btn-primary">GO</button>
+
+    }
+</div>
+<br />
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Oda_no)
         </th>
+        <th><a href="~/address?order=sabikgbs">
+Sabik_gbs
+</a>
+   
+</th>
         <th>
-            @Html.DisplayNameFor(model => model.Sabik_gabisa)
+          
+                Sabik_Oda
+            
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Sabik_Oda)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tole)
+            <a href="~/address?order=tole">
+                Tole
+            </a>
         </th>
         <th>
             @Html.DisplayNameFor(model => model.table_house_senior_details.Home_no)

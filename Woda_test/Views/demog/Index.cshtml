@@ -9,6 +9,16 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<div class="pull-right">
+    @using (Html.BeginForm("Index", "demog", FormMethod.Get))
+    {
+        @Html.TextBox("q", "", new { placeholder = "Search..." });
+
+        <button type="submit" class="btn btn-primary">GO</button>
+
+    }
+</div>
+<br />
 <table class="table">
     <tr>
         <th>
@@ -21,10 +31,15 @@
             @Html.DisplayNameFor(model => model.Female_count)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.caste)
+            <a href="~/demog?order=caste">
+                Caste
+            </a>
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.religion)
+<th>
+    <a href="~/demog?order=religion">
+        Religion
+    </a>
+            
         </th>
         <th>
             @Html.DisplayNameFor(model => model.table_house_senior_details.Home_no)

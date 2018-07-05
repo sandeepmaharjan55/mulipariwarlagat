@@ -15,10 +15,24 @@ namespace Woda_test.Controllers
         private woda_testEntities db = new woda_testEntities();
 
         // GET: homefacility
-        public ActionResult Index()
+        public ActionResult Index(string q, string order)
         {
-            var table_home_facility = db.table_home_facility.Include(t => t.table_house_senior_details);
-            return View(table_home_facility.ToList());
+            var name = from n in db.table_home_facility select n;
+            if (q != null)
+            {
+                name = name.Where(n => n.House_type.Contains(q));
+            }
+            switch (order)
+            {
+                case "entertain":
+                    name = name.OrderBy(n => n.entertainment);
+                    break;
+               
+                default:
+                    name = name.OrderBy(n => n.senior_id);
+                    break;
+            }
+            return View(name.ToList());
         }
 
         // GET: homefacility/Details/5

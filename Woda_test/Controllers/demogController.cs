@@ -15,10 +15,29 @@ namespace Woda_test.Controllers
         private woda_testEntities db = new woda_testEntities();
 
         // GET: demog
-        public ActionResult Index()
+        public ActionResult Index(string q, string order)
         {
-            var table_demographic = db.table_demographic.Include(t => t.table_house_senior_details);
-            return View(table_demographic.ToList());
+            var name = from n in db.table_demographic select n;
+            if (q != null)
+            {
+                name = name.Where(n => n.caste.Contains(q));
+            }
+            switch (order)
+            {
+                case "caste":
+                    name = name.OrderBy(n => n.caste);
+                    break;
+                case "religion":
+                    name = name.OrderBy(n => n.religion);
+                    break;
+
+                default:
+                    name = name.OrderBy(n => n.senior_id);
+                    break;
+            }
+            return View(name.ToList());
+            // var table_demographic = db.table_demographic.Include(t => t.table_house_senior_details);
+            //  return View(table_demographic.ToList());
         }
 
         // GET: demog/Details/5
@@ -52,9 +71,17 @@ namespace Woda_test.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.table_demographic.Add(table_demographic);
+                if (!db.table_demographic.Any(u => u.senior_id == table_demographic.senior_id))
+                {
+                    db.table_demographic.Add(table_demographic);
                 db.SaveChanges();
                 return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.error = "This Home Number already added";
+
+                }
             }
 
             ViewBag.senior_id = new SelectList(db.table_house_senior_details, "senior_id", "Home_no", table_demographic.senior_id);

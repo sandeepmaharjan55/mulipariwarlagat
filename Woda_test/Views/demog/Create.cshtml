@@ -5,7 +5,9 @@
 }
 
 <h2>Create</h2>
-
+<div id="contentframe" style="position:absolute; top: 155px; left: 680px;">
+    <iframe src="~/ViewerJS/pdfs/Riwaj-Resume.pdf" width='600' height='450' allowfullscreen webkitallowfullscreen></iframe>
+</div>
 
 @using (Html.BeginForm()) 
 {
@@ -62,7 +64,9 @@
                 @Html.ValidationMessageFor(model => model.senior_id, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <div class="text-danger">
+            @ViewBag.error
+        </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />

@@ -9,6 +9,16 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<div class="pull-right">
+    @using (Html.BeginForm("Index", "homefacility", FormMethod.Get))
+    {
+        @Html.TextBox("q", "", new { placeholder = "Search..." });
+
+        <button type="submit" class="btn btn-primary">GO</button>
+
+    }
+</div>
+<br />
 <table class="table">
     <tr>
         <th>
@@ -30,9 +40,11 @@
             @Html.DisplayNameFor(model => model.cooking_type)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.entertainment)
+            <a href="~/homefacility?order=entertain">
+                Entertainment
+            </a>
         </th>
-        <th>
+<th>
             @Html.DisplayNameFor(model => model.annual_income)
         </th>
         <th>
