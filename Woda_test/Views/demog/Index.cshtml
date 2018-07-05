@@ -42,21 +42,20 @@
             
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.table_house_senior_details.Home_no)
-        </th>
+            घर नं.  </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Total_person)
+            परिवारको संख्या-जम्मा
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Male_count)
+            पुरुष 
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Female_count)
+            महिला 
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.caste)
