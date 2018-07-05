@@ -68,7 +68,7 @@ namespace Woda_test.Controllers
             if (ModelState.IsValid)
             {
 
-                if (!db.table_house_senior_details.Any(u => u.senior_id == table_house_senior_details.senior_id))
+                if (!db.table_house_senior_details.Any(u => u.Home_no == table_house_senior_details.Home_no))
                 {
                     db.table_house_senior_details.Add(table_house_senior_details);
                 db.SaveChanges();
