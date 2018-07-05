@@ -30,6 +30,9 @@ namespace Woda_test.Controllers
                 case "tole":
                     name = name.OrderBy(n => n.Tole);
                     break;
+                case "oda":
+                    name = name.OrderBy(n => n.Oda_no);
+                    break;
                 default:
                     name = name.OrderBy(n => n.senior_id);
                     break;

@@ -110,7 +110,11 @@
             @Html.DisplayFor(modelItem => item.CitizenshipIssue_district)
         </td>
        
-      
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.senior_id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.senior_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.senior_id })
+        </td>
         
      
     </tr>
