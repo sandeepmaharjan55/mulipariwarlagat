@@ -12,7 +12,7 @@ namespace Woda_test.Models
     using System;
     using System.Collections.Generic;
     
-    public class table_demographic
+    public partial class table_demographic
     {
         public int D_id { get; set; }
         public int Total_person { get; set; }
@@ -20,7 +20,7 @@ namespace Woda_test.Models
         public int Female_count { get; set; }
         public string caste { get; set; }
         public string religion { get; set; }
-        public int senior_id { get; set; }
+        public Nullable<int> senior_id { get; set; }
     
         public virtual table_house_senior_details table_house_senior_details { get; set; }
     }

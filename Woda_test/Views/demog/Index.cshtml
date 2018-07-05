@@ -22,13 +22,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Total_person)
+            परिवारको संख्या-जम्मा
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Male_count)
+            पुरुष
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Female_count)
+            महिला
         </th>
         <th>
             <a href="~/demog?order=caste">
@@ -49,13 +49,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            परिवारको संख्या-जम्मा
+            @Html.DisplayFor(modelItem => item.Total_person)
         </td>
         <td>
-            पुरुष 
+            @Html.DisplayFor(modelItem => item.Male_count)
         </td>
         <td>
-            महिला 
+            @Html.DisplayFor(modelItem => item.Female_count)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.caste)

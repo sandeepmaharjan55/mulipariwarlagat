@@ -63,5 +63,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="pdffiles">
+      <EntityTypeMapping TypeName="woda_testModel.pdffile">
+        <MappingFragment StoreEntitySet="pdffile">
+          <ScalarProperty Name="File" ColumnName="File" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="PdfID" ColumnName="PdfID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

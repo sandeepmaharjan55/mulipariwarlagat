@@ -165,10 +165,12 @@
     <Compile Include="Controllers\demogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\homefacilityController.cs" />
+    <Compile Include="Controllers\PdfController.cs" />
     <Compile Include="Controllers\seniordetailsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\FileModel.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -184,8 +186,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\MyDbContext.cs" />
-    <Compile Include="Models\PdfFile.cs" />
+    <Compile Include="Models\pdffile.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\table_address.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -198,7 +201,6 @@
     <Compile Include="Models\table_house_senior_details.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -298,9 +300,16 @@
     <Content Include="Views\demog\Index.cshtml" />
     <Content Include="ViewerJS\pdfs\Riwaj-Resume.odp" />
     <Content Include="ViewerJS\pdfs\Riwaj-Resume.pdf" />
+    <Content Include="Views\Pdf\Create.cshtml" />
+    <Content Include="Views\Pdf\Delete.cshtml" />
+    <Content Include="Views\Pdf\Details.cshtml" />
+    <Content Include="Views\Pdf\Edit.cshtml" />
+    <Content Include="Views\Pdf\Index.cshtml" />
+    <Content Include="Views\Pdf\UploadFiles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
