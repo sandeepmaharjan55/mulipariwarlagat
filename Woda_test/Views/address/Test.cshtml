@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Woda_test.Models.pdffile>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="pull-right">
+    @using (Html.BeginForm("Index", "address", FormMethod.Get))
+    {
+        @Html.TextBox("q", "", new { placeholder = "Search..." });
+
+        <button type="submit" class="btn btn-primary">GO</button>
+
+    }
+</div>
+<br />
+<table class="table">
+    <tr>
+       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.File)
+            </td>
+            <td>
+                <div id="contentframe" style="position:absolute; top: 155px; left: 680px;">
+                    <iframe src="@item.File" width='600' height='450' allowfullscreen webkitallowfullscreen></iframe>
+                </div>
+            </td>
+           
+            
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PdfID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PdfID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PdfID })
+            </td>
+        </tr>
+    }
+
+</table>

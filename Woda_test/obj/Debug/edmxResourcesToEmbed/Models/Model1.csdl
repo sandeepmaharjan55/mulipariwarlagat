@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="woda_testModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="pdffile">
+    <Key>
+      <PropertyRef Name="PdfID" />
+    </Key>
+    <Property Name="PdfID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="File" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
   <EntityType Name="table_address">
     <Key>
       <PropertyRef Name="Add_id" />
@@ -101,6 +109,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="woda_testEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="pdffiles" EntityType="Self.pdffile" />
     <EntitySet Name="table_address" EntityType="Self.table_address" />
     <EntitySet Name="table_demographic" EntityType="Self.table_demographic" />
     <EntitySet Name="table_home_facility" EntityType="Self.table_home_facility" />
@@ -117,14 +126,5 @@
       <End Role="table_house_senior_details" EntitySet="table_house_senior_details" />
       <End Role="table_home_facility" EntitySet="table_home_facility" />
     </AssociationSet>
-    <EntitySet Name="pdffiles" EntityType="woda_testModel.pdffile" />
   </EntityContainer>
-  <EntityType Name="pdffile">
-    <Key>
-      <PropertyRef Name="PdfID" />
-    </Key>
-    <Property Name="PdfID" Type="Int32" Nullable="false" />
-    <Property Name="status" Type="Boolean" />
-    <Property Name="File" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-  </EntityType>
 </Schema>

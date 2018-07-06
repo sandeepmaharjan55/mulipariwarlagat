@@ -25,10 +25,10 @@ namespace Woda_test.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<pdffile> pdffiles { get; set; }
         public virtual DbSet<table_address> table_address { get; set; }
         public virtual DbSet<table_demographic> table_demographic { get; set; }
         public virtual DbSet<table_home_facility> table_home_facility { get; set; }
         public virtual DbSet<table_house_senior_details> table_house_senior_details { get; set; }
-        public virtual DbSet<pdffile> pdffiles { get; set; }
     }
 }

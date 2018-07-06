@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b7a4fd650c9d4c299dc26ee533d9dd0d" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="woda_testModel.table_address" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="woda_testModel.table_demographic" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="woda_testModel.table_home_facility" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="woda_testModel.table_house_senior_details" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="woda_testModel.table_address_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="woda_testModel.table_demographic_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="woda_testModel.table_home_facility_ibfk_1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="woda_testModel.pdffile" Width="1.5" PointX="5.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

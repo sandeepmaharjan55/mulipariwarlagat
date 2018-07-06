@@ -45,11 +45,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -165,8 +165,8 @@
     <Compile Include="Controllers\demogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\homefacilityController.cs" />
-    <Compile Include="Controllers\PdfController.cs" />
     <Compile Include="Controllers\seniordetailsController.cs" />
+    <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -300,16 +300,16 @@
     <Content Include="Views\demog\Index.cshtml" />
     <Content Include="ViewerJS\pdfs\Riwaj-Resume.odp" />
     <Content Include="ViewerJS\pdfs\Riwaj-Resume.pdf" />
-    <Content Include="Views\Pdf\Create.cshtml" />
-    <Content Include="Views\Pdf\Delete.cshtml" />
-    <Content Include="Views\Pdf\Details.cshtml" />
-    <Content Include="Views\Pdf\Edit.cshtml" />
-    <Content Include="Views\Pdf\Index.cshtml" />
-    <Content Include="Views\Pdf\UploadFiles.cshtml" />
+    <Content Include="Views\Upload\UploadFiles.cshtml" />
+    <Content Include="Views\address\Test.cshtml" />
+    <Content Include="Views\Upload\Create.cshtml" />
+    <Content Include="Views\Upload\Delete.cshtml" />
+    <Content Include="Views\Upload\Details.cshtml" />
+    <Content Include="Views\Upload\Edit.cshtml" />
+    <Content Include="Views\Upload\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
