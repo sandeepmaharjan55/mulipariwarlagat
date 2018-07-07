@@ -40,6 +40,7 @@ namespace Woda_test.Controllers
                     {
                         var InputFileName = Path.GetFileName(file.FileName);
                         var ServerSavePath = Path.Combine(Server.MapPath("~/ViewerJS/pdfs/") + InputFileName);
+                        var tosave = "ViewerJS/pdfs/"+ InputFileName;
                         //Save file to server folder  
                         file.SaveAs(ServerSavePath);
                         ViewBag.UploadStatus = files.Count().ToString() + " files uploaded successfully.";
@@ -47,7 +48,7 @@ namespace Woda_test.Controllers
                             db.pdffiles.Add(new pdffile
                             {
                                 status = false,
-                                File = ServerSavePath
+                                File = tosave
                             });
                             db.SaveChanges();
                             ViewBag.UploadStatus = files.Count().ToString() + " files uploaded successfully.";
@@ -91,6 +92,7 @@ namespace Woda_test.Controllers
         // GET: Upload/Create
         public ActionResult Create()
         {
+
             return View();
         }
 

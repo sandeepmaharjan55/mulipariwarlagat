@@ -5,7 +5,11 @@
 }
 
 <h2>Index</h2>
+<td>
+    @*<div id="contentframe" style="position:absolute; top: 155px; left: 680px;">*@
+    <iframe src="~/@ViewBag.file" width='600' height='450' allowfullscreen webkitallowfullscreen></iframe>
 
+</td>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -33,11 +37,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.File)
             </td>
-            <td>
-                <div id="contentframe" style="position:absolute; top: 155px; left: 680px;">
-                    <iframe src="@item.File" width='600' height='450' allowfullscreen webkitallowfullscreen></iframe>
-                </div>
-            </td>
+            
            
             
             <td>

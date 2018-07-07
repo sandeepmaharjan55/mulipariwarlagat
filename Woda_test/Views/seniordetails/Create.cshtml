@@ -34,9 +34,11 @@
 }
 
 <h2>Create</h2>
-<div id="contentframe" style="position:absolute; top: 155px; left: 680px;">
-    <iframe src="~/ViewerJS/pdfs/Riwaj-Resume.pdf" width='600' height='450' allowfullscreen webkitallowfullscreen></iframe>
-</div>
+<td>
+    <div id="contentframe" style="position:absolute; top: 155px; left: 680px;">
+        <iframe src="~/@ViewBag.file" width='600' height='450' allowfullscreen webkitallowfullscreen></iframe>
+    </div>
+</td>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()

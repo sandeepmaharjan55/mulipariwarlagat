@@ -55,6 +55,20 @@ namespace Woda_test.Controllers
         // GET: seniordetails/Create
         public ActionResult Create()
         {
+            var result = db.pdffiles // this explicit query is here
+                            .Where(stats => stats.status == false)
+                            .Take(1);
+            //.Select(stats => new
+            //             {
+            //               File = stats.File
+
+            //         });
+            foreach (var item in result)
+            {
+
+                ViewBag.file = item.File;
+            }
+
             return View();
         }
 

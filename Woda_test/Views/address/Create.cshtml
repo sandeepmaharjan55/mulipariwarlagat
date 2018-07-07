@@ -4,12 +4,16 @@
     ViewBag.Title = "Create";
 }
 
-  
+  <td>
+    <div id="contentframe" style="position:absolute; top: 155px; left: 680px;">
+    <iframe src="~/@ViewBag.file" width='600' height='450' allowfullscreen webkitallowfullscreen></iframe>
+      </div>
+</td>
+
 <h2>Create</h2>
 
-<div id="contentframe" style="position:absolute; top: 155px; left: 680px;">
-    <iframe src="~/ViewerJS/pdfs/Riwaj-Resume.pdf" width='600' height='450' allowfullscreen webkitallowfullscreen></iframe>
-</div>
+
+
 
 @using (Html.BeginForm()) 
 {
@@ -58,7 +62,7 @@
                 @Html.ValidationMessageFor(model => model.Tole, "", new { @class = "text-danger" })
             </div>
         </div>
-
+       
 
         <div class="text-danger">
             @ViewBag.error

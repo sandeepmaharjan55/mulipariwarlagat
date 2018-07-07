@@ -60,33 +60,54 @@ namespace Woda_test.Controllers
         // GET: address/Create
         public ActionResult Create()
         {
+            var result = db.pdffiles // this explicit query is here
+                              .Where(stats => stats.status == false)
+                              .Take(1);
+            //.Select(stats => new
+            //             {
+            //               File = stats.File
 
-          
-            
+            //         });
+            foreach (var item in result)
+            {
+
+                ViewBag.file = item.File;
+            }
+
+
 
             ViewBag.senior_id = new SelectList(db.table_house_senior_details, "senior_id", "Home_no");
             return View();
+
+
+            //ViewBag.senior_id = new SelectList(db.table_house_senior_details, "senior_id", "Home_no");
+           // return View();
         }
        public ActionResult Test()
         {
 
-            using (var db = new woda_testEntities())
-            { // db can also be injected,
+           // db can also be injected,
                 var result = db.pdffiles // this explicit query is here
                                .Where(stats => stats.status == false)
-                               .ToList();
-                //.Select(stats => new
-                  //             {
-                    //               File = stats.File
+                               .Take(1);
+            //.Select(stats => new
+            //             {
+            //               File = stats.File
 
-                      //         });
-
-
-               
-
-            ViewBag.senior_id = new SelectList(db.table_house_senior_details, "senior_id", "Home_no");
-            return View(result.ToList());
+            //         });
+            foreach (var item in result)
+            {
+                
+                       ViewBag.file=item.File;
             }
+            
+            return View();
+
+
+
+
+           // return View(result.ToList());
+            
         }
 
         // POST: address/Create
@@ -104,6 +125,12 @@ namespace Woda_test.Controllers
                 {
                     //db.table_address.Any(ag => ag.senior_id == c)
                     db.table_address.Add(table_address);
+                    db.SaveChanges();
+                    db.pdffiles.Add(new pdffile
+                    {
+                        status = true
+                       
+                    });
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }

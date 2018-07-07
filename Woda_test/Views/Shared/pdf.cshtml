@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Woda_test.Models.pdffile>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.File)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.File)
+        </td>
+        <td>
+            @*<div id="contentframe" style="position:absolute; top: 155px; left: 680px;">*@
+            <iframe src="~/@item.File" width='600' height='450' allowfullscreen webkitallowfullscreen></iframe>
+
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PdfID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PdfID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PdfID })
+        </td>
+    </tr>
+}
+
+</table>
