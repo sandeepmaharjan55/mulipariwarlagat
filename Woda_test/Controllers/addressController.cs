@@ -126,12 +126,40 @@ namespace Woda_test.Controllers
                     //db.table_address.Any(ag => ag.senior_id == c)
                     db.table_address.Add(table_address);
                     db.SaveChanges();
-                    db.pdffiles.Add(new pdffile
+                    //db.pdffiles.Add(new pdffile
+                    // {
+                    //   status = true
+
+                    //});
+                    // db.SaveChanges();
+
+
+                    var result = db.pdffiles // this explicit query is here
+                               .Where(stats => stats.status == false)
+                               .Take(1);
+
+                    foreach (var item in result)
                     {
-                        status = true
-                       
-                    });
-                    db.SaveChanges();
+
+                        ViewBag.file = item.File;
+                        pdffile pdff = new pdffile();
+                        using (var con = new woda_testEntities())
+                        {
+                            pdff = con.pdffiles.First(x => x.File == item.File);
+                            pdff.status = true;
+
+                            con.pdffiles.Attach(pdff);
+                            var entry = con.Entry(pdff);
+                            entry.Property(e => e.status).IsModified = true;
+                            con.SaveChanges();
+                        }
+                    }
+                    
+
+                   
+
+
+
                     return RedirectToAction("Index");
                 }
                 else
