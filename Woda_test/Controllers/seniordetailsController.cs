@@ -56,7 +56,7 @@ namespace Woda_test.Controllers
         public ActionResult Create()
         {
             var result = db.pdffiles // this explicit query is here
-                            .Where(stats => stats.status == false)
+                            .Where(stats => stats.senior_status == false)
                             .Take(1);
             //.Select(stats => new
             //             {
@@ -86,7 +86,28 @@ namespace Woda_test.Controllers
                 {
                     db.table_house_senior_details.Add(table_house_senior_details);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                    var result = db.pdffiles // this explicit query is here
+                               .Where(stats => stats.senior_status == false)
+                               .Take(1);
+
+                    foreach (var item in result)
+                    {
+
+                        ViewBag.file = item.File;
+                        pdffile pdff = new pdffile();
+                        using (var con = new woda_testEntities())
+                        {
+                            pdff = con.pdffiles.First(x => x.File == item.File);
+                            pdff.senior_status = true;
+
+                            con.pdffiles.Attach(pdff);
+                            var entry = con.Entry(pdff);
+                            entry.Property(e => e.senior_status).IsModified = true;
+                            con.SaveChanges();
+                        }
+                    }
+                    return RedirectToAction("Index");
             }
             else
             {

@@ -5,7 +5,10 @@
       <PropertyRef Name="PdfID" />
     </Key>
     <Property Name="PdfID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="senior_status" Type="bool" />
     <Property Name="status" Type="bool" />
+    <Property Name="demo_status" Type="bool" />
+    <Property Name="home_status" Type="bool" />
     <Property Name="File" Type="varchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="table_address">

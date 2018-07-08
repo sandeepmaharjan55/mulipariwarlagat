@@ -10,7 +10,10 @@
             <PropertyRef Name="PdfID" />
           </Key>
           <Property Name="PdfID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="senior_status" Type="bool" />
           <Property Name="status" Type="bool" />
+          <Property Name="demo_status" Type="bool" />
+          <Property Name="home_status" Type="bool" />
           <Property Name="File" Type="varchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="table_address">
@@ -136,7 +139,10 @@
             <PropertyRef Name="PdfID" />
           </Key>
           <Property Name="PdfID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="senior_status" Type="Boolean" />
           <Property Name="status" Type="Boolean" />
+          <Property Name="demo_status" Type="Boolean" />
+          <Property Name="home_status" Type="Boolean" />
           <Property Name="File" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="table_address">
@@ -268,7 +274,10 @@
             <EntityTypeMapping TypeName="woda_testModel.pdffile">
               <MappingFragment StoreEntitySet="pdffile">
                 <ScalarProperty Name="PdfID" ColumnName="PdfID" />
+                <ScalarProperty Name="senior_status" ColumnName="senior_status" />
                 <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="demo_status" ColumnName="demo_status" />
+                <ScalarProperty Name="home_status" ColumnName="home_status" />
                 <ScalarProperty Name="File" ColumnName="File" />
               </MappingFragment>
             </EntityTypeMapping>

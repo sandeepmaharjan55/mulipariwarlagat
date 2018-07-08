@@ -133,7 +133,7 @@ namespace Woda_test.Controllers
                     //});
                     // db.SaveChanges();
 
-
+//for status value change from
                     var result = db.pdffiles // this explicit query is here
                                .Where(stats => stats.status == false)
                                .Take(1);
@@ -156,7 +156,7 @@ namespace Woda_test.Controllers
                     }
                     
 
-                   
+       //to here            
 
 
 

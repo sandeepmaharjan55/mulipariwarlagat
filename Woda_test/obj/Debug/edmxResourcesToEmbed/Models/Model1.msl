@@ -5,7 +5,10 @@
       <EntityTypeMapping TypeName="woda_testModel.pdffile">
         <MappingFragment StoreEntitySet="pdffile">
           <ScalarProperty Name="PdfID" ColumnName="PdfID" />
+          <ScalarProperty Name="senior_status" ColumnName="senior_status" />
           <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="demo_status" ColumnName="demo_status" />
+          <ScalarProperty Name="home_status" ColumnName="home_status" />
           <ScalarProperty Name="File" ColumnName="File" />
         </MappingFragment>
       </EntityTypeMapping>
