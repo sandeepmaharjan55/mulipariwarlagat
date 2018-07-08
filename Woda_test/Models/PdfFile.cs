@@ -15,10 +15,10 @@ namespace Woda_test.Models
     public partial class pdffile
     {
         public int PdfID { get; set; }
-        public Nullable<bool> senior_status { get; set; }
+        public bool senior_status { get; set; }
         public Nullable<bool> status { get; set; }
-        public Nullable<bool> demo_status { get; set; }
-        public Nullable<bool> home_status { get; set; }
+        public bool demo_status { get; set; }
+        public bool home_status { get; set; }
         public string File { get; set; }
     }
 }

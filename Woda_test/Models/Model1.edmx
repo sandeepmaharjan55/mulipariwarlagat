@@ -10,10 +10,10 @@
             <PropertyRef Name="PdfID" />
           </Key>
           <Property Name="PdfID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="senior_status" Type="bool" />
+          <Property Name="senior_status" Type="bool" Nullable="false" />
           <Property Name="status" Type="bool" />
-          <Property Name="demo_status" Type="bool" />
-          <Property Name="home_status" Type="bool" />
+          <Property Name="demo_status" Type="bool" Nullable="false" />
+          <Property Name="home_status" Type="bool" Nullable="false" />
           <Property Name="File" Type="varchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="table_address">
@@ -139,10 +139,10 @@
             <PropertyRef Name="PdfID" />
           </Key>
           <Property Name="PdfID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="senior_status" Type="Boolean" />
+          <Property Name="senior_status" Type="Boolean" Nullable="false" />
           <Property Name="status" Type="Boolean" />
-          <Property Name="demo_status" Type="Boolean" />
-          <Property Name="home_status" Type="Boolean" />
+          <Property Name="demo_status" Type="Boolean" Nullable="false" />
+          <Property Name="home_status" Type="Boolean" Nullable="false" />
           <Property Name="File" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="table_address">

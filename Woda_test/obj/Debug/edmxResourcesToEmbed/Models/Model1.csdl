@@ -5,10 +5,10 @@
       <PropertyRef Name="PdfID" />
     </Key>
     <Property Name="PdfID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="senior_status" Type="Boolean" />
+    <Property Name="senior_status" Type="Boolean" Nullable="false" />
     <Property Name="status" Type="Boolean" />
-    <Property Name="demo_status" Type="Boolean" />
-    <Property Name="home_status" Type="Boolean" />
+    <Property Name="demo_status" Type="Boolean" Nullable="false" />
+    <Property Name="home_status" Type="Boolean" Nullable="false" />
     <Property Name="File" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="table_address">
