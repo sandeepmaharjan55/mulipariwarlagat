@@ -22,7 +22,7 @@
 <table class="table">
     <tr>
         <th>
-            घरको प्रकार
+            @Html.DisplayNameFor(model => model.House_type)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.House_area)
@@ -31,30 +31,52 @@
             @Html.DisplayNameFor(model => model.House_total_area)
         </th>
         <th>
-            छानाको किसिम
+            @Html.DisplayNameFor(model => model.roof_type)
         </th>
         <th>
-            घर भाडा दिइएको
+            @Html.DisplayNameFor(model => model.on_rent)
         </th>
         <th>
-            चुलो किसिम
+            @Html.DisplayNameFor(model => model.cooking_type)
         </th>
         <th>
-            <a href="~/homefacility?order=entertain">
-                मनोरन्जन
-            </a>
+            @Html.DisplayNameFor(model => model.entertainment)
         </th>
-<th>
-    बार्षिक आम्दानी रु. 
+        <th>
+            @Html.DisplayNameFor(model => model.annual_income)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sampannata_sthar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.drinking_water)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.drinking_water_TYPE)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.fohormaila_bewasthapan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.irrigation)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.irrigation_type)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ownership_type)
+            @Html.DisplayNameFor(model => model.sadak_pugeko)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sadak_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bhukampa_jokhim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.house_used_for)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ghar_naksha)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.storey)
@@ -63,7 +85,11 @@
             @Html.DisplayNameFor(model => model.electricity)
         </th>
         <th>
-            घर नं. </th>
+            @Html.DisplayNameFor(model => model.electricity_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.table_house_senior_details.Home_no)
+        </th>
         <th></th>
     </tr>
 
@@ -94,19 +120,46 @@
             @Html.DisplayFor(modelItem => item.annual_income)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.sampannata_sthar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.drinking_water)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.drinking_water_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fohormaila_bewasthapan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.irrigation)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.irrigation_type)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ownership_type)
+            @Html.DisplayFor(modelItem => item.sadak_pugeko)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sadak_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bhukampa_jokhim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.house_used_for)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ghar_naksha)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.storey)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.electricity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.electricity_type)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.table_house_senior_details.Home_no)

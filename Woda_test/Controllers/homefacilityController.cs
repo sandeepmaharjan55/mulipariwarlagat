@@ -76,7 +76,7 @@ namespace Woda_test.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "F_id,House_type,House_area,House_total_area,roof_type,on_rent,cooking_type,entertainment,annual_income,drinking_water_TYPE,irrigation_type,ownership_type,storey,electricity,senior_id")] table_home_facility table_home_facility)
+        public ActionResult Create([Bind(Include = "F_id,House_type,House_area,House_total_area,roof_type,on_rent,cooking_type,entertainment,annual_income,sampannata_sthar,drinking_water,drinking_water_TYPE,fohormaila_bewasthapan,irrigation,irrigation_type,sadak_pugeko,sadak_type,bhukampa_jokhim,house_used_for,Ghar_naksha,storey,electricity,electricity_type,senior_id")] table_home_facility table_home_facility)
         {
             if (ModelState.IsValid)
             {
@@ -116,6 +116,11 @@ namespace Woda_test.Controllers
                 }
             }
 
+
+
+           
+
+
             ViewBag.senior_id = new SelectList(db.table_house_senior_details, "senior_id", "Home_no", table_home_facility.senior_id);
             return View(table_home_facility);
         }
@@ -141,7 +146,7 @@ namespace Woda_test.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "F_id,House_type,House_area,House_total_area,roof_type,on_rent,cooking_type,entertainment,annual_income,drinking_water_TYPE,irrigation_type,ownership_type,storey,electricity,senior_id")] table_home_facility table_home_facility)
+        public ActionResult Edit([Bind(Include = "F_id,House_type,House_area,House_total_area,roof_type,on_rent,cooking_type,entertainment,annual_income,sampannata_sthar,drinking_water,drinking_water_TYPE,fohormaila_bewasthapan,irrigation,irrigation_type,sadak_pugeko,sadak_type,bhukampa_jokhim,house_used_for,Ghar_naksha,storey,electricity,electricity_type,senior_id")] table_home_facility table_home_facility)
         {
             if (ModelState.IsValid)
             {

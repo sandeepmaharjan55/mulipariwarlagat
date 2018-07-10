@@ -1,6 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="woda_testModelStoreContainer" CdmEntityContainer="woda_testEntities">
+    <EntitySetMapping Name="anupasthit_bekti">
+      <EntityTypeMapping TypeName="woda_testModel.anupasthit_bekti">
+        <MappingFragment StoreEntitySet="anupasthit_bekti">
+          <ScalarProperty Name="AB_ID" ColumnName="AB_ID" />
+          <ScalarProperty Name="senior_id" ColumnName="senior_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="anupasthit_bekti_many">
+      <EntityTypeMapping TypeName="woda_testModel.anupasthit_bekti_many">
+        <MappingFragment StoreEntitySet="anupasthit_bekti_many">
+          <ScalarProperty Name="ABM_ID" ColumnName="ABM_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="went_place" ColumnName="went_place" />
+          <ScalarProperty Name="gone_reason" ColumnName="gone_reason" />
+          <ScalarProperty Name="AB_ID" ColumnName="AB_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="apangatas">
+      <EntityTypeMapping TypeName="woda_testModel.apangata">
+        <MappingFragment StoreEntitySet="apangata">
+          <ScalarProperty Name="apangaID" ColumnName="apangaID" />
+          <ScalarProperty Name="apangata1" ColumnName="apangata" />
+          <ScalarProperty Name="apanga_type" ColumnName="apanga_type" />
+          <ScalarProperty Name="senior_id" ColumnName="senior_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pariwar_bekti_bibarand">
+      <EntityTypeMapping TypeName="woda_testModel.pariwar_bekti_bibarand">
+        <MappingFragment StoreEntitySet="pariwar_bekti_bibarand">
+          <ScalarProperty Name="PB_ID" ColumnName="PB_ID" />
+          <ScalarProperty Name="senior_id" ColumnName="senior_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pariwar_bekti_bibarand_many">
+      <EntityTypeMapping TypeName="woda_testModel.pariwar_bekti_bibarand_many">
+        <MappingFragment StoreEntitySet="pariwar_bekti_bibarand_many">
+          <ScalarProperty Name="PBM_ID" ColumnName="PBM_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="nata" ColumnName="nata" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="birth_place" ColumnName="birth_place" />
+          <ScalarProperty Name="education" ColumnName="education" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="age_group" ColumnName="age_group" />
+          <ScalarProperty Name="PB_ID" ColumnName="PB_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="pdffiles">
       <EntityTypeMapping TypeName="woda_testModel.pdffile">
         <MappingFragment StoreEntitySet="pdffile">
@@ -10,6 +64,17 @@
           <ScalarProperty Name="demo_status" ColumnName="demo_status" />
           <ScalarProperty Name="home_status" ColumnName="home_status" />
           <ScalarProperty Name="File" ColumnName="File" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="swosta_sewa">
+      <EntityTypeMapping TypeName="woda_testModel.swosta_sewa">
+        <MappingFragment StoreEntitySet="swosta_sewa">
+          <ScalarProperty Name="sewaID" ColumnName="sewaID" />
+          <ScalarProperty Name="khop" ColumnName="khop" />
+          <ScalarProperty Name="mahila_posand" ColumnName="mahila_posand" />
+          <ScalarProperty Name="upachar" ColumnName="upachar" />
+          <ScalarProperty Name="senior_id" ColumnName="senior_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -50,11 +115,20 @@
           <ScalarProperty Name="cooking_type" ColumnName="cooking_type" />
           <ScalarProperty Name="entertainment" ColumnName="entertainment" />
           <ScalarProperty Name="annual_income" ColumnName="annual_income" />
+          <ScalarProperty Name="sampannata_sthar" ColumnName="sampannata_sthar" />
+          <ScalarProperty Name="drinking_water" ColumnName="drinking_water" />
           <ScalarProperty Name="drinking_water_TYPE" ColumnName="drinking_water_TYPE" />
+          <ScalarProperty Name="fohormaila_bewasthapan" ColumnName="fohormaila_bewasthapan" />
+          <ScalarProperty Name="irrigation" ColumnName="irrigation" />
           <ScalarProperty Name="irrigation_type" ColumnName="irrigation_type" />
-          <ScalarProperty Name="ownership_type" ColumnName="ownership_type" />
+          <ScalarProperty Name="sadak_pugeko" ColumnName="sadak_pugeko" />
+          <ScalarProperty Name="sadak_type" ColumnName="sadak_type" />
+          <ScalarProperty Name="bhukampa_jokhim" ColumnName="bhukampa_jokhim" />
+          <ScalarProperty Name="house_used_for" ColumnName="house_used_for" />
+          <ScalarProperty Name="Ghar_naksha" ColumnName="Ghar_naksha" />
           <ScalarProperty Name="storey" ColumnName="storey" />
           <ScalarProperty Name="electricity" ColumnName="electricity" />
+          <ScalarProperty Name="electricity_type" ColumnName="electricity_type" />
           <ScalarProperty Name="senior_id" ColumnName="senior_id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -71,6 +145,7 @@
           <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
           <ScalarProperty Name="CitizenShip_no" ColumnName="CitizenShip_no" />
           <ScalarProperty Name="CitizenshipIssue_district" ColumnName="CitizenshipIssue_district" />
+          <ScalarProperty Name="citizenissue_date" ColumnName="citizenissue_date" />
           <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>

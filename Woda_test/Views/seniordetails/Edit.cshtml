@@ -113,6 +113,13 @@
                 @Html.ValidationMessageFor(model => model.CitizenshipIssue_district, "", new { @class = "text-danger" })
             </div>
         </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.citizenissue_date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.citizenissue_date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.citizenissue_date, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
        
 

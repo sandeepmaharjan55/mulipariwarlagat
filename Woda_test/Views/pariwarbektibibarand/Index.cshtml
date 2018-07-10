@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Woda_test.Models.pariwar_bekti_bibarand>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.table_house_senior_details.Home_no)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.table_house_senior_details.Home_no)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PB_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PB_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PB_ID })
+        </td>
+    </tr>
+}
+
+</table>

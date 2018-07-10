@@ -23,11 +23,20 @@ namespace Woda_test.Models
         public string cooking_type { get; set; }
         public string entertainment { get; set; }
         public int annual_income { get; set; }
+        public Nullable<int> sampannata_sthar { get; set; }
+        public Nullable<bool> drinking_water { get; set; }
         public string drinking_water_TYPE { get; set; }
+        public Nullable<bool> fohormaila_bewasthapan { get; set; }
+        public Nullable<bool> irrigation { get; set; }
         public string irrigation_type { get; set; }
-        public string ownership_type { get; set; }
+        public Nullable<bool> sadak_pugeko { get; set; }
+        public string sadak_type { get; set; }
+        public Nullable<bool> bhukampa_jokhim { get; set; }
+        public string house_used_for { get; set; }
+        public Nullable<bool> Ghar_naksha { get; set; }
         public int storey { get; set; }
         public Nullable<bool> electricity { get; set; }
+        public string electricity_type { get; set; }
         public Nullable<int> senior_id { get; set; }
     
         public virtual table_house_senior_details table_house_senior_details { get; set; }

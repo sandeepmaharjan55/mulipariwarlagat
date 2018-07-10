@@ -1,0 +1,66 @@
+﻿@model Woda_test.Models.anupasthit_bekti_many
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>anupasthit_bekti_many</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.went_place)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.went_place)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gone_reason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gone_reason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.anupasthit_bekti.AB_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.anupasthit_bekti.AB_ID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ABM_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

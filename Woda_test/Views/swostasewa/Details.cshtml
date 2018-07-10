@@ -1,0 +1,50 @@
+﻿@model Woda_test.Models.swosta_sewa
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>swosta_sewa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.khop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.khop)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mahila_posand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mahila_posand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.upachar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.upachar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.table_house_senior_details.Education)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.table_house_senior_details.Education)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.sewaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

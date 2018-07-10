@@ -15,7 +15,8 @@ namespace Woda_test.Controllers
         // GET: seniordetails
         public ActionResult Index(string q, string order)
         {
-            var name = from n in db.table_house_senior_details select n;
+           
+                var name = from n in db.table_house_senior_details select n;
             if (q != null)
             {
                 name = name.Where(n => n.Name.Contains(q));

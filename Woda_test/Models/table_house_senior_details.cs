@@ -17,6 +17,10 @@ namespace Woda_test.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public table_house_senior_details()
         {
+            this.anupasthit_bekti = new HashSet<anupasthit_bekti>();
+            this.apangatas = new HashSet<apangata>();
+            this.pariwar_bekti_bibarand = new HashSet<pariwar_bekti_bibarand>();
+            this.swosta_sewa = new HashSet<swosta_sewa>();
             this.table_address = new HashSet<table_address>();
             this.table_demographic = new HashSet<table_demographic>();
             this.table_home_facility = new HashSet<table_home_facility>();
@@ -31,8 +35,17 @@ namespace Woda_test.Models
         public string BirthPlace { get; set; }
         public string CitizenShip_no { get; set; }
         public string CitizenshipIssue_district { get; set; }
+        public System.DateTime citizenissue_date { get; set; }
         public string Name { get; set; }
-    
+       
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<anupasthit_bekti> anupasthit_bekti { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<apangata> apangatas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<pariwar_bekti_bibarand> pariwar_bekti_bibarand { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<swosta_sewa> swosta_sewa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<table_address> table_address { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

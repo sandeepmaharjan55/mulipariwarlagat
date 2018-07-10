@@ -4,12 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="94aad122bffd408f844d2b858cef02d3" Name="Diagram1">
-        <EntityTypeShape EntityType="woda_testModel.pdffile" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="woda_testModel.table_address" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="woda_testModel.table_demographic" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="woda_testModel.table_home_facility" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="woda_testModel.table_house_senior_details" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+      <Diagram DiagramId="580950562cf34426bee3c81e25ac046c" Name="Diagram1">
+        <EntityTypeShape EntityType="woda_testModel.anupasthit_bekti" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="woda_testModel.anupasthit_bekti_many" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="woda_testModel.apangata" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="woda_testModel.pariwar_bekti_bibarand" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="woda_testModel.pariwar_bekti_bibarand_many" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="woda_testModel.pdffile" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="woda_testModel.swosta_sewa" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="woda_testModel.table_address" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="woda_testModel.table_demographic" Width="1.5" PointX="3" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="woda_testModel.table_home_facility" Width="1.5" PointX="3" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="woda_testModel.table_house_senior_details" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <AssociationConnector Association="woda_testModel.anupasthit_bekti_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="woda_testModel.anupasthit_bekti_many_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="woda_testModel.apangata_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="woda_testModel.pariwar_bekti_bibarand_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="woda_testModel.pariwar_bekti_bibarand_many_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="woda_testModel.swosta_sewa_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="woda_testModel.table_address_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="woda_testModel.table_demographic_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="woda_testModel.table_home_facility_ibfk_1" ManuallyRouted="false" />

@@ -1,0 +1,82 @@
+﻿@model Woda_test.Models.pariwar_bekti_bibarand_many
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>pariwar_bekti_bibarand_many</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nata)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nata)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.birth_place)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.birth_place)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.education)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.education)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.age_group)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.age_group)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pariwar_bekti_bibarand.PB_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pariwar_bekti_bibarand.PB_ID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PBM_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

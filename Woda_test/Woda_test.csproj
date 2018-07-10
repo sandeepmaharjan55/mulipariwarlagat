@@ -162,13 +162,28 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\addressController.cs" />
+    <Compile Include="Controllers\anupasthitbektiController.cs" />
+    <Compile Include="Controllers\anupasthitbektimanyController.cs" />
+    <Compile Include="Controllers\apangataController.cs" />
     <Compile Include="Controllers\demogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\homefacilityController.cs" />
+    <Compile Include="Controllers\pariwarbektibibarandController.cs" />
+    <Compile Include="Controllers\pariwarbektibibarandmanyController.cs" />
     <Compile Include="Controllers\seniordetailsController.cs" />
+    <Compile Include="Controllers\swostasewaController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\anupasthit_bekti.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\anupasthit_bekti_many.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\apangata.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FileModel.cs" />
     <Compile Include="Models\Model1.Context.cs">
@@ -186,7 +201,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\pariwar_bekti_bibarand.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pariwar_bekti_bibarand_many.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\pdffile.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\swosta_sewa.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\table_address.cs">
@@ -282,7 +306,6 @@
     <Content Include="Views\homefacility\Delete.cshtml" />
     <Content Include="Views\homefacility\Details.cshtml" />
     <Content Include="Views\homefacility\Edit.cshtml" />
-    <Content Include="Views\homefacility\Index.cshtml" />
     <Content Include="Views\address\Create.cshtml" />
     <Content Include="Views\address\Delete.cshtml" />
     <Content Include="Views\address\Details.cshtml" />
@@ -308,6 +331,37 @@
     <Content Include="Views\Upload\Edit.cshtml" />
     <Content Include="Views\Upload\Index.cshtml" />
     <Content Include="Views\Shared\pdf.cshtml" />
+    <Content Include="Views\homefacility\Index.cshtml" />
+    <Content Include="Views\apangata\Create.cshtml" />
+    <Content Include="Views\apangata\Delete.cshtml" />
+    <Content Include="Views\apangata\Details.cshtml" />
+    <Content Include="Views\apangata\Edit.cshtml" />
+    <Content Include="Views\apangata\Index.cshtml" />
+    <Content Include="Views\swostasewa\Create.cshtml" />
+    <Content Include="Views\swostasewa\Delete.cshtml" />
+    <Content Include="Views\swostasewa\Details.cshtml" />
+    <Content Include="Views\swostasewa\Edit.cshtml" />
+    <Content Include="Views\swostasewa\Index.cshtml" />
+    <Content Include="Views\anupasthitbekti\Create.cshtml" />
+    <Content Include="Views\anupasthitbekti\Delete.cshtml" />
+    <Content Include="Views\anupasthitbekti\Details.cshtml" />
+    <Content Include="Views\anupasthitbekti\Edit.cshtml" />
+    <Content Include="Views\anupasthitbekti\Index.cshtml" />
+    <Content Include="Views\anupasthitbektimany\Create.cshtml" />
+    <Content Include="Views\anupasthitbektimany\Delete.cshtml" />
+    <Content Include="Views\anupasthitbektimany\Details.cshtml" />
+    <Content Include="Views\anupasthitbektimany\Edit.cshtml" />
+    <Content Include="Views\anupasthitbektimany\Index.cshtml" />
+    <Content Include="Views\pariwarbektibibarand\Create.cshtml" />
+    <Content Include="Views\pariwarbektibibarand\Delete.cshtml" />
+    <Content Include="Views\pariwarbektibibarand\Details.cshtml" />
+    <Content Include="Views\pariwarbektibibarand\Edit.cshtml" />
+    <Content Include="Views\pariwarbektibibarand\Index.cshtml" />
+    <Content Include="Views\pariwarbektibibarandmany\Create.cshtml" />
+    <Content Include="Views\pariwarbektibibarandmany\Delete.cshtml" />
+    <Content Include="Views\pariwarbektibibarandmany\Details.cshtml" />
+    <Content Include="Views\pariwarbektibibarandmany\Edit.cshtml" />
+    <Content Include="Views\pariwarbektibibarandmany\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

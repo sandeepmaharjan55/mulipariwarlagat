@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Woda_test.Models.apangata>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.apangata1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apanga_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.table_house_senior_details.Home_no)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.apangata1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apanga_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.table_house_senior_details.Home_no)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.apangaID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.apangaID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.apangaID })
+        </td>
+    </tr>
+}
+
+</table>

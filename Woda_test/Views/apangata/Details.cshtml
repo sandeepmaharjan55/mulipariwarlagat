@@ -1,0 +1,42 @@
+﻿@model Woda_test.Models.apangata
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>apangata</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.apangata1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apangata1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apanga_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apanga_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.table_house_senior_details.Education)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.table_house_senior_details.Education)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.apangaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,5 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="woda_testModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="anupasthit_bekti">
+    <Key>
+      <PropertyRef Name="AB_ID" />
+    </Key>
+    <Property Name="AB_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="senior_id" Type="int" />
+  </EntityType>
+  <EntityType Name="anupasthit_bekti_many">
+    <Key>
+      <PropertyRef Name="ABM_ID" />
+    </Key>
+    <Property Name="ABM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Gender" Type="varchar" MaxLength="100" />
+    <Property Name="Total" Type="int" />
+    <Property Name="went_place" Type="varchar" MaxLength="100" />
+    <Property Name="gone_reason" Type="varchar" MaxLength="100" />
+    <Property Name="AB_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="apangata">
+    <Key>
+      <PropertyRef Name="apangaID" />
+    </Key>
+    <Property Name="apangaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="apangata" Type="bool" />
+    <Property Name="apanga_type" Type="varchar" MaxLength="50" />
+    <Property Name="senior_id" Type="int" />
+  </EntityType>
+  <EntityType Name="pariwar_bekti_bibarand">
+    <Key>
+      <PropertyRef Name="PB_ID" />
+    </Key>
+    <Property Name="PB_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="senior_id" Type="int" />
+  </EntityType>
+  <EntityType Name="pariwar_bekti_bibarand_many">
+    <Key>
+      <PropertyRef Name="PBM_ID" />
+    </Key>
+    <Property Name="PBM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="nata" Type="varchar" MaxLength="100" />
+    <Property Name="gender" Type="varchar" MaxLength="50" />
+    <Property Name="birth_place" Type="varchar" MaxLength="100" />
+    <Property Name="education" Type="varchar" MaxLength="100" />
+    <Property Name="age" Type="int" />
+    <Property Name="age_group" Type="varchar" MaxLength="50" />
+    <Property Name="PB_ID" Type="int" />
+  </EntityType>
   <EntityType Name="pdffile">
     <Key>
       <PropertyRef Name="PdfID" />
@@ -10,6 +59,16 @@
     <Property Name="demo_status" Type="bool" Nullable="false" />
     <Property Name="home_status" Type="bool" Nullable="false" />
     <Property Name="File" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="swosta_sewa">
+    <Key>
+      <PropertyRef Name="sewaID" />
+    </Key>
+    <Property Name="sewaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="khop" Type="bool" />
+    <Property Name="mahila_posand" Type="bool" />
+    <Property Name="upachar" Type="varchar" MaxLength="100" />
+    <Property Name="senior_id" Type="int" />
   </EntityType>
   <EntityType Name="table_address">
     <Key>
@@ -47,11 +106,20 @@
     <Property Name="cooking_type" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="entertainment" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="annual_income" Type="int" Nullable="false" />
-    <Property Name="drinking_water_TYPE" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="irrigation_type" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="ownership_type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sampannata_sthar" Type="int" />
+    <Property Name="drinking_water" Type="bool" />
+    <Property Name="drinking_water_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="fohormaila_bewasthapan" Type="bool" />
+    <Property Name="irrigation" Type="bool" />
+    <Property Name="irrigation_type" Type="varchar" MaxLength="50" />
+    <Property Name="sadak_pugeko" Type="bool" />
+    <Property Name="sadak_type" Type="varchar" MaxLength="50" />
+    <Property Name="bhukampa_jokhim" Type="bool" />
+    <Property Name="house_used_for" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ghar_naksha" Type="bool" />
     <Property Name="storey" Type="int" Nullable="false" />
     <Property Name="electricity" Type="bool" />
+    <Property Name="electricity_type" Type="varchar" MaxLength="100" />
     <Property Name="senior_id" Type="int" />
   </EntityType>
   <EntityType Name="table_house_senior_details">
@@ -67,8 +135,81 @@
     <Property Name="BirthPlace" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="CitizenShip_no" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="CitizenshipIssue_district" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="citizenissue_date" Type="datetime" Precision="0" Nullable="false" />
     <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <Association Name="anupasthit_bekti_ibfk_1">
+    <End Role="table_house_senior_details" Type="Self.table_house_senior_details" Multiplicity="0..1" />
+    <End Role="anupasthit_bekti" Type="Self.anupasthit_bekti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="table_house_senior_details">
+        <PropertyRef Name="senior_id" />
+      </Principal>
+      <Dependent Role="anupasthit_bekti">
+        <PropertyRef Name="senior_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="anupasthit_bekti_many_ibfk_1">
+    <End Role="anupasthit_bekti" Type="Self.anupasthit_bekti" Multiplicity="0..1" />
+    <End Role="anupasthit_bekti_many" Type="Self.anupasthit_bekti_many" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="anupasthit_bekti">
+        <PropertyRef Name="AB_ID" />
+      </Principal>
+      <Dependent Role="anupasthit_bekti_many">
+        <PropertyRef Name="AB_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="apangata_ibfk_1">
+    <End Role="table_house_senior_details" Type="Self.table_house_senior_details" Multiplicity="0..1" />
+    <End Role="apangata" Type="Self.apangata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="table_house_senior_details">
+        <PropertyRef Name="senior_id" />
+      </Principal>
+      <Dependent Role="apangata">
+        <PropertyRef Name="senior_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="pariwar_bekti_bibarand_ibfk_1">
+    <End Role="table_house_senior_details" Type="Self.table_house_senior_details" Multiplicity="0..1" />
+    <End Role="pariwar_bekti_bibarand" Type="Self.pariwar_bekti_bibarand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="table_house_senior_details">
+        <PropertyRef Name="senior_id" />
+      </Principal>
+      <Dependent Role="pariwar_bekti_bibarand">
+        <PropertyRef Name="senior_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="pariwar_bekti_bibarand_many_ibfk_1">
+    <End Role="pariwar_bekti_bibarand" Type="Self.pariwar_bekti_bibarand" Multiplicity="0..1" />
+    <End Role="pariwar_bekti_bibarand_many" Type="Self.pariwar_bekti_bibarand_many" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pariwar_bekti_bibarand">
+        <PropertyRef Name="PB_ID" />
+      </Principal>
+      <Dependent Role="pariwar_bekti_bibarand_many">
+        <PropertyRef Name="PB_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="swosta_sewa_ibfk_1">
+    <End Role="table_house_senior_details" Type="Self.table_house_senior_details" Multiplicity="0..1" />
+    <End Role="swosta_sewa" Type="Self.swosta_sewa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="table_house_senior_details">
+        <PropertyRef Name="senior_id" />
+      </Principal>
+      <Dependent Role="swosta_sewa">
+        <PropertyRef Name="senior_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="table_address_ibfk_1">
     <End Role="table_house_senior_details" Type="Self.table_house_senior_details" Multiplicity="0..1" />
     <End Role="table_address" Type="Self.table_address" Multiplicity="*" />
@@ -106,11 +247,41 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="woda_testModelStoreContainer">
+    <EntitySet Name="anupasthit_bekti" EntityType="Self.anupasthit_bekti" Schema="woda_test" store:Type="Tables" />
+    <EntitySet Name="anupasthit_bekti_many" EntityType="Self.anupasthit_bekti_many" Schema="woda_test" store:Type="Tables" />
+    <EntitySet Name="apangata" EntityType="Self.apangata" Schema="woda_test" store:Type="Tables" />
+    <EntitySet Name="pariwar_bekti_bibarand" EntityType="Self.pariwar_bekti_bibarand" Schema="woda_test" store:Type="Tables" />
+    <EntitySet Name="pariwar_bekti_bibarand_many" EntityType="Self.pariwar_bekti_bibarand_many" Schema="woda_test" store:Type="Tables" />
     <EntitySet Name="pdffile" EntityType="Self.pdffile" Schema="woda_test" store:Type="Tables" />
+    <EntitySet Name="swosta_sewa" EntityType="Self.swosta_sewa" Schema="woda_test" store:Type="Tables" />
     <EntitySet Name="table_address" EntityType="Self.table_address" Schema="woda_test" store:Type="Tables" />
     <EntitySet Name="table_demographic" EntityType="Self.table_demographic" Schema="woda_test" store:Type="Tables" />
     <EntitySet Name="table_home_facility" EntityType="Self.table_home_facility" Schema="woda_test" store:Type="Tables" />
     <EntitySet Name="table_house_senior_details" EntityType="Self.table_house_senior_details" Schema="woda_test" store:Type="Tables" />
+    <AssociationSet Name="anupasthit_bekti_ibfk_1" Association="Self.anupasthit_bekti_ibfk_1">
+      <End Role="table_house_senior_details" EntitySet="table_house_senior_details" />
+      <End Role="anupasthit_bekti" EntitySet="anupasthit_bekti" />
+    </AssociationSet>
+    <AssociationSet Name="anupasthit_bekti_many_ibfk_1" Association="Self.anupasthit_bekti_many_ibfk_1">
+      <End Role="anupasthit_bekti" EntitySet="anupasthit_bekti" />
+      <End Role="anupasthit_bekti_many" EntitySet="anupasthit_bekti_many" />
+    </AssociationSet>
+    <AssociationSet Name="apangata_ibfk_1" Association="Self.apangata_ibfk_1">
+      <End Role="table_house_senior_details" EntitySet="table_house_senior_details" />
+      <End Role="apangata" EntitySet="apangata" />
+    </AssociationSet>
+    <AssociationSet Name="pariwar_bekti_bibarand_ibfk_1" Association="Self.pariwar_bekti_bibarand_ibfk_1">
+      <End Role="table_house_senior_details" EntitySet="table_house_senior_details" />
+      <End Role="pariwar_bekti_bibarand" EntitySet="pariwar_bekti_bibarand" />
+    </AssociationSet>
+    <AssociationSet Name="pariwar_bekti_bibarand_many_ibfk_1" Association="Self.pariwar_bekti_bibarand_many_ibfk_1">
+      <End Role="pariwar_bekti_bibarand" EntitySet="pariwar_bekti_bibarand" />
+      <End Role="pariwar_bekti_bibarand_many" EntitySet="pariwar_bekti_bibarand_many" />
+    </AssociationSet>
+    <AssociationSet Name="swosta_sewa_ibfk_1" Association="Self.swosta_sewa_ibfk_1">
+      <End Role="table_house_senior_details" EntitySet="table_house_senior_details" />
+      <End Role="swosta_sewa" EntitySet="swosta_sewa" />
+    </AssociationSet>
     <AssociationSet Name="table_address_ibfk_1" Association="Self.table_address_ibfk_1">
       <End Role="table_house_senior_details" EntitySet="table_house_senior_details" />
       <End Role="table_address" EntitySet="table_address" />

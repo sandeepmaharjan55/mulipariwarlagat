@@ -25,7 +25,13 @@ namespace Woda_test.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<anupasthit_bekti> anupasthit_bekti { get; set; }
+        public virtual DbSet<anupasthit_bekti_many> anupasthit_bekti_many { get; set; }
+        public virtual DbSet<apangata> apangatas { get; set; }
+        public virtual DbSet<pariwar_bekti_bibarand> pariwar_bekti_bibarand { get; set; }
+        public virtual DbSet<pariwar_bekti_bibarand_many> pariwar_bekti_bibarand_many { get; set; }
         public virtual DbSet<pdffile> pdffiles { get; set; }
+        public virtual DbSet<swosta_sewa> swosta_sewa { get; set; }
         public virtual DbSet<table_address> table_address { get; set; }
         public virtual DbSet<table_demographic> table_demographic { get; set; }
         public virtual DbSet<table_home_facility> table_home_facility { get; set; }

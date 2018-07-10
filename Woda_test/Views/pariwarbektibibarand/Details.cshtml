@@ -1,0 +1,26 @@
+﻿@model Woda_test.Models.pariwar_bekti_bibarand
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>pariwar_bekti_bibarand</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.table_house_senior_details.Education)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.table_house_senior_details.Education)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PB_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

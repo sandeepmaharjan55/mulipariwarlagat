@@ -1,0 +1,174 @@
+﻿@model IEnumerable<Woda_test.Models.table_home_facility>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="pull-right">
+    @using (Html.BeginForm("Index", "homefacility", FormMethod.Get))
+    {
+        @Html.TextBox("q", "", new { placeholder = "Search..." });
+
+        <button type="submit" class="btn btn-primary">GO</button>
+
+    }
+</div>
+<br />
+<table class="table">
+    <tr>
+        <th>
+            घरको प्रकार
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.House_area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.House_total_area)
+        </th>
+        <th>
+            छानाको किसिम
+        </th>
+        <th>
+            घर भाडा दिइएको
+        </th>
+        <th>
+            चुलो किसिम
+        </th>
+        <th>
+            <a href="~/homefacility?order=entertain">
+                मनोरन्जन
+            </a>
+        </th>
+<th>
+    बार्षिक आम्दानी रु. 
+        </th>
+        <th>
+            sampannata_sthar
+        </th>
+        <th>
+            drinking_water
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.drinking_water_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fohormaila_bewasthapan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.irrigation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.irrigation_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sadak_pugeko)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sadak_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bhukampa_jokhim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.house_used_for)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ghar_naksha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.storey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.electricity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.electricity_type)
+        </th>
+        <th>
+            घर नं. </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.House_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.House_area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.House_total_area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.roof_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.on_rent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cooking_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.entertainment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.annual_income)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sampannata_sthar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.drinking_water)
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.drinking_water_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.irrigation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.irrigation_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sadak_pugeko)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sadak_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bhukampa_jokhim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.house_used_for)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ghar_naksha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.storey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.electricity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.electricity_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.table_house_senior_details.Home_no)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.F_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.F_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.F_id })
+        </td>
+    </tr>
+}
+
+</table>

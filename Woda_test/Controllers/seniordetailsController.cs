@@ -77,7 +77,7 @@ namespace Woda_test.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "senior_id,Home_no,Education,Occupation,Contact_no,DOB,BirthPlace,CitizenShip_no,CitizenshipIssue_district,Name")] table_house_senior_details table_house_senior_details)
+        public ActionResult Create([Bind(Include = "senior_id,Home_no,Education,Occupation,Contact_no,DOB,BirthPlace,CitizenShip_no,CitizenshipIssue_district,citizenissue_date,Name")] table_house_senior_details table_house_senior_details)
         {
             if (ModelState.IsValid)
             {
@@ -139,7 +139,7 @@ namespace Woda_test.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "senior_id,Home_no,Education,Occupation,Contact_no,DOB,BirthPlace,CitizenShip_no,CitizenshipIssue_district,Name")] table_house_senior_details table_house_senior_details)
+        public ActionResult Edit([Bind(Include = "senior_id,Home_no,Education,Occupation,Contact_no,DOB,BirthPlace,CitizenShip_no,CitizenshipIssue_district,citizenissue_date,Name")] table_house_senior_details table_house_senior_details)
         {
             if (ModelState.IsValid)
             {

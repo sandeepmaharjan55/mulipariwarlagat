@@ -141,124 +141,238 @@
         <th>
             Storey
         </th>
-        <th></th>
+        <th>
+            khop
+        </th>
+        <th>
+            mahila_posand
+        </th>
+        <th>
+            upachar
+        </th>
+        <th>
+            apangata
+        </th>
+        <th>
+            apanga_type
+        </th>
+        <th>
+            anupasthit_bekti
+        </th>
+        <th>
+            pariwar Bekti
+        </th>
+        <th>
+
+        </th>
+        <th>
+
+        </th>
+        <th>
+
+        </th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-
-        foreach (var subitem in item.table_address)
+        @foreach (var item in Model)
         {
-            foreach (var demo in item.table_demographic)
+
+            foreach (var subitem in item.table_address)
             {
-                foreach (var homfac in item.table_home_facility)
+                foreach (var demo in item.table_demographic)
                 {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Home_no)
-                    </td>
-                    
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_address => subitem.Oda_no)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_address => subitem.Sabik_gabisa)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_address => subitem.Sabik_Oda)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_address => subitem.Tole)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Education)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Occupation)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Contact_no)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DOB)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BirthPlace)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CitizenShip_no)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CitizenshipIssue_district)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_demographic => demo.caste)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_demographic => demo.religion)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_demographic => demo.Male_count)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_demographic => demo.Female_count)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_demographic => demo.Total_person)
-                    </td>
+                    foreach (var homfac in item.table_home_facility)
+                    {
+                        foreach (var sows in item.swosta_sewa)
+                        {
+                            foreach (var apang in item.apangatas)
+                            {
+                                foreach (var anup in item.anupasthit_bekti)
+                                {
+                                    foreach (var par in item.pariwar_bekti_bibarand)
+                                    {
+
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Home_no)
+                                            </td>
+
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Name)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_address => subitem.Oda_no)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_address => subitem.Sabik_gabisa)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_address => subitem.Sabik_Oda)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_address => subitem.Tole)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Education)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Occupation)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Contact_no)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.DOB)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.BirthPlace)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CitizenShip_no)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CitizenshipIssue_district)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_demographic => demo.caste)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_demographic => demo.religion)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_demographic => demo.Male_count)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_demographic => demo.Female_count)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_demographic => demo.Total_person)
+                                            </td>
 
 
 
-                    <td>
-                        @Html.DisplayFor(table_home_facility => homfac.annual_income)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_home_facility => homfac.cooking_type)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_home_facility => homfac.drinking_water_TYPE)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_home_facility => homfac.electricity)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_home_facility => homfac.entertainment)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_home_facility => homfac.House_area)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_home_facility => homfac.House_total_area)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_home_facility => homfac.House_type)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_home_facility => homfac.irrigation_type)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_home_facility => homfac.on_rent)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_home_facility => homfac.ownership_type)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_home_facility => homfac.roof_type)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(table_home_facility => homfac.storey)
-                    </td>
+                                            <td>
+                                                @Html.DisplayFor(table_home_facility => homfac.annual_income)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_home_facility => homfac.cooking_type)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_home_facility => homfac.drinking_water_TYPE)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_home_facility => homfac.electricity)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_home_facility => homfac.entertainment)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_home_facility => homfac.House_area)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_home_facility => homfac.House_total_area)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_home_facility => homfac.House_type)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_home_facility => homfac.irrigation_type)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_home_facility => homfac.on_rent)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_home_facility => homfac.Ghar_naksha)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_home_facility => homfac.roof_type)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(table_home_facility => homfac.storey)
+                                            </td>
 
 
-                </tr>
-                }
-            }
-        }
-    }
+                                            <td>
+                                                @Html.DisplayFor(swosta_sewa => sows.khop)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(swosta_sewa => sows.mahila_posand)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(swosta_sewa => sows.upachar)
+                                            </td>
 
 
 
-    </table>
+                                            <td>
+                                                @Html.DisplayFor(apangatas => apang.apangata1)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(apangatas => apang.apanga_type)
+                                            </td>
+
+                                           
+                                                    @foreach (var anp in anup.anupasthit_bekti_many)
+                                                    {
+                                                       
+                                                        <td>
+                                                            @Html.DisplayFor(anupasthit_bekti_many => anp.Name)
+
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(anupasthit_bekti_many => anp.Gender)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(anupasthit_bekti_many => anp.Total)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(anupasthit_bekti_many => anp.went_place)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(anupasthit_bekti_many => anp.gone_reason)
+                                                        </td>
+                                                    }
+                                                    
+                                                
+
+                                                    @foreach (var xae in par.pariwar_bekti_bibarand_many)
+                                                    {
+
+                                                        <td>
+                                                            @Html.DisplayFor(pariwar_bekti_bibarand_many => xae.Name)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(pariwar_bekti_bibarand_many => xae.nata)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(pariwar_bekti_bibarand_many => xae.gender)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(pariwar_bekti_bibarand_many => xae.education)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(pariwar_bekti_bibarand_many => xae.birth_place)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(pariwar_bekti_bibarand_many => xae.age)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(pariwar_bekti_bibarand_many => xae.age_group)
+
+                                                        </td>
+
+                                                    }
+
+
+                                                </tr>
+                                                }
+                                                }
+                                                }
+                                                }
+                                                }
+                                                }
+                                                }
+                                                }
+
+
+
+                                            </table>
